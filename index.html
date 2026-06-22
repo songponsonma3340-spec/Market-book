@@ -1,388 +1,2197 @@
-<!DOCTYPE html>
+```react
+import React, { useState, useEffect } from 'react';
+import { 
+  BookOpen, 
+  Coins, 
+  TrendingUp, 
+  Sparkles, 
+  Search, 
+  User, 
+  CheckCircle2, 
+  Wallet, 
+  PlusCircle, 
+  ChevronRight, 
+  Star, 
+  Bell, 
+  LogOut, 
+  DollarSign, 
+  Award, 
+  Eye, 
+  Heart, 
+  Share2, 
+  Sliders,
+  ChevronLeft,
+  Settings,
+  ShieldCheck,
+  AlertCircle,
+  X,
+  BookMarked,
+  Layers,
+  ArrowUpRight,
+  ShieldAlert,
+  Users,
+  Check,
+  Ban,
+  FileText,
+  Percent,
+  Lock,
+  Mail,
+  Filter,
+  MessageSquare,
+  Flame,
+  Trophy,
+  Hammer,
+  Database
+} from 'lucide-react';
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Aureate - Vibrant Literary Narrative</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Configuration -->
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "tertiary-fixed-dim": "#a8caea",
-                    "on-secondary-fixed": "#380d00",
-                    "on-tertiary-fixed-variant": "#284a64",
-                    "inverse-surface": "#2f312e",
-                    "on-primary-fixed-variant": "#084f4d",
-                    "on-surface": "#1b1c1a",
-                    "outline-variant": "#bfc8c7",
-                    "surface-container-lowest": "#ffffff",
-                    "on-surface-variant": "#3f4948",
-                    "on-primary-fixed": "#00201f",
-                    "surface-variant": "#e3e2df",
-                    "primary-fixed-dim": "#95d1ce",
-                    "error-container": "#ffdad6",
-                    "error": "#ba1a1a",
-                    "surface-bright": "#faf9f5",
-                    "on-error": "#ffffff",
-                    "inverse-on-surface": "#f2f1ed",
-                    "on-tertiary-fixed": "#001e31",
-                    "surface": "#faf9f5",
-                    "on-background": "#1b1c1a",
-                    "outline": "#707978",
-                    "secondary": "#8c4e35",
-                    "secondary-fixed-dim": "#ffb59a",
-                    "surface-container-low": "#f4f4f0",
-                    "surface-tint": "#2a6865",
-                    "tertiary-fixed": "#cce5ff",
-                    "on-secondary-fixed-variant": "#6f3720",
-                    "on-primary-container": "#7ebab7",
-                    "background": "#faf9f5",
-                    "tertiary": "#062f48",
-                    "on-tertiary-container": "#91b2d2",
-                    "secondary-fixed": "#ffdbce",
-                    "tertiary-container": "#234560",
-                    "on-secondary-container": "#793f27",
-                    "inverse-primary": "#95d1ce",
-                    "on-primary": "#ffffff",
-                    "surface-container": "#efeeea",
-                    "secondary-container": "#ffad8f",
-                    "on-tertiary": "#ffffff",
-                    "primary-fixed": "#b1eeea",
-                    "surface-container-highest": "#e3e2df",
-                    "surface-dim": "#dbdad6",
-                    "primary-container": "#004b49",
-                    "primary": "#003331",
-                    "on-secondary": "#ffffff",
-                    "on-error-container": "#93000a",
-                    "surface-container-high": "#e9e8e4"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "gutter": "24px",
-                    "unit": "8px",
-                    "margin-mobile": "20px",
-                    "container-max": "1280px",
-                    "margin-desktop": "64px"
-            },
-            "fontFamily": {
-                    "display-lg-mobile": [
-                            "Libre Caslon Text"
-                    ],
-                    "body-lg": [
-                            "Hanken Grotesk"
-                    ],
-                    "title-lg": [
-                            "Hanken Grotesk"
-                    ],
-                    "display-lg": [
-                            "Libre Caslon Text"
-                    ],
-                    "label-md": [
-                            "Hanken Grotesk"
-                    ],
-                    "body-md": [
-                            "Hanken Grotesk"
-                    ],
-                    "headline-md": [
-                            "Libre Caslon Text"
-                    ]
-            },
-            "fontSize": {
-                    "display-lg-mobile": [
-                            "36px",
-                            {
-                                    "lineHeight": "44px",
-                                    "letterSpacing": "-0.02em",
-                                    "fontWeight": "400"
-                            }
-                    ],
-                    "body-lg": [
-                            "18px",
-                            {
-                                    "lineHeight": "28px",
-                                    "fontWeight": "400"
-                            }
-                    ],
-                    "title-lg": [
-                            "20px",
-                            {
-                                    "lineHeight": "28px",
-                                    "letterSpacing": "0.01em",
-                                    "fontWeight": "600"
-                            }
-                    ],
-                    "display-lg": [
-                            "48px",
-                            {
-                                    "lineHeight": "56px",
-                                    "letterSpacing": "-0.02em",
-                                    "fontWeight": "400"
-                            }
-                    ],
-                    "label-md": [
-                            "14px",
-                            {
-                                    "lineHeight": "20px",
-                                    "letterSpacing": "0.05em",
-                                    "fontWeight": "500"
-                            }
-                    ],
-                    "body-md": [
-                            "16px",
-                            {
-                                    "lineHeight": "24px",
-                                    "fontWeight": "400"
-                            }
-                    ],
-                    "headline-md": [
-                            "32px",
-                            {
-                                    "lineHeight": "40px",
-                                    "fontWeight": "400"
-                            }
-                    ]
-            }
+// === โหลดฟอนต์หรูหราผ่าน CDN ===
+const loadFonts = () => {
+  if (document.getElementById('ink-gold-fonts')) return;
+  const link = document.createElement('link');
+  link.id = 'ink-gold-fonts';
+  link.rel = 'stylesheet';
+  link.href = 'https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap';
+  document.head.appendChild(link);
+};
+
+// === ข้อมูลนิยายเริ่มต้นในคลังระบบ ===
+const INITIAL_NOVELS = [
+  {
+    id: 'n1',
+    title: 'เพลิงแค้นบังบัลลังก์ทองคำ',
+    author: 'รัญชนา',
+    authorEmail: 'author_ranchana@inkandgold.com',
+    category: 'จีนกำลังภายใน',
+    coverGradient: 'from-[#0F3A40] via-[#1E5E65] to-[#B45309]',
+    synopsis: 'เมื่อองค์หญิงแปดผู้ถูกเนรเทศเดินทางกลับมาทวงคืนความยุติธรรมให้แก่พระมารดา ท่ามกลางศึกชิงบัลลังก์ที่ใช้ลมหายใจและคมดาบเป็นเดิมพัน!',
+    rating: 4.9,
+    reviewsCount: 785,
+    views: 342500, 
+    favorites: 12450,
+    isPopular: true,
+    isRecommended: true,
+    isBanned: false,
+    chapters: [
+      { id: 'n1-c1', title: 'บทที่ 1: หิมะแรกแห่งการลาจาก', price: 0, content: 'สายลมเหนือหนาวเหน็บพัดผ่านกำแพงศิลาของพระราชวังหลวงที่ถูกทาทับด้วยเลือดของเหล่าผู้พ่ายแพ้... จ้าวหนิงลี่ ยืนมองเศษกระเบื้องเคลือบสีทองที่แตกร้าวใต้เท้าของตนเองอย่างไร้ความรู้สึก วันนี้เป็นวันที่พระมารดาของเธอถูกถอดถอน และเป็นวันที่เธอจะไม่มีวันลืมเลือนความแค้นนี้ชั่วชีวิต' },
+      { id: 'n1-c2', title: 'บทที่ 2: ค่ายกระบี่อุดรทิศ', price: 0, content: 'สิบปีผ่านไป... ในหุบเขาไร้นาม ทางตอนเหนือของแผ่นดิน เด็กหญิงผู้อ่อนแอในวันนั้นกลายเป็นยอดฝีมือผู้กุมเพลงกระบี่พิฆาต "ถึงเวลาแล้วที่พวกมันจะต้องชดใช้อย่างสาสม" คำพูดแผ่วเบาแต่ก้องกังวานสะท้อนไปทั่วถ้ำศิลาอันหนาวเย็น' },
+      { id: 'n1-c3', title: 'บทที่ 3: แผนการชิงเครื่องหอม (เหรียญ)', price: 3, content: 'การลอบเข้าวังหลวงครั้งแรกไม่ใช่เรื่องง่าย จ้าวหนิงลี่จำต้องใช้หน้ากากหนังมนุษย์ปลอมตัวเป็นนางกำนัลฝิ่นยา เธอต้องเผชิญหน้ากับศัตรูเก่าผู้เคยเหยียบย่ำศักดิ์ศรีของเธอเมื่อสิบปีก่อน หากแต่ครั้งนี้ดวงตาของเธอช่างสงบเยือกเย็นดุจก้นบ่อลึก...' }
+    ]
+  },
+  {
+    id: 'n2',
+    title: 'พันธนาการรักเจ้าชายแวมไพร์',
+    author: 'พิมพ์ทอง',
+    authorEmail: 'author_pimtong@inkandgold.com',
+    category: 'รักโรแมนติก',
+    coverGradient: 'from-[#1E1B4B] via-[#311042] to-[#B45309]',
+    synopsis: 'ความลับของตระกูลขุนนางโบราณที่ซ่อนอยู่ในคฤหาสน์หรู ท่ามกลางห้วงอารมณ์ปรารถนาและหยดเลือดสีทับทิมที่มิอาจหักห้ามใจ',
+    rating: 4.8,
+    reviewsCount: 612,
+    views: 298000, 
+    favorites: 9840,
+    isPopular: true,
+    isRecommended: false,
+    isBanned: false,
+    chapters: [
+      { id: 'n2-c1', title: 'บทที่ 1: บรั่นดีแก้วสุดท้าย', price: 0, content: 'แสงเทียนสลัวพาดผ่านใบหน้าหล่อเหลาของเอเดรียน ดวงตาสีครามเข้มของเขาสะท้อนความเหนื่อยล้าของเวลาหลายร้อยปีที่ยังมีชีวิตอยู่ "กลิ่นกายของเจ้า... ช่างหวานล้ำจนข้าแทบควบคุมตนเองไม่ได้" เขาพึมพำขณะสบตาหญิงสาวผู้แปลกหน้า' },
+      { id: 'n2-c2', title: 'บทที่ 2: รอยประทับต้องสาป', price: 0, content: 'ความร้อนผ่าวแผ่ซ่านตรงบริเวณผิวคอขาวผ่อง รอยกัดแผ่วเบาแต่ฝังลึกทำให้เธอรู้สึกราวกับวิญญาณกำลังหลุดลอย เอเดรียนโอบกอดร่างกายที่สั่นเทาไว้แนบแน่น "จากนี้ไป เจ้าคือคนของข้า ตลอดกาล..."' }
+    ]
+  },
+  {
+    id: 'n3',
+    title: 'ถอดรหัสคดีลับฆาตกรรมหน้ากากทอง',
+    author: 'ผู้กองพชร',
+    authorEmail: 'author_pachara@inkandgold.com',
+    category: 'สืบสวนสอบสวน',
+    coverGradient: 'from-[#0F172A] via-[#1E293B] to-[#475569]',
+    synopsis: 'ปริศนาการฆาตกรรมต่อเนื่องในงานประมูลวัตถุโบราณที่แฝงไปด้วยความโลภและการแก้แค้นอย่างมีศิลปะ',
+    rating: 4.7,
+    reviewsCount: 312,
+    views: 187200, 
+    favorites: 5410,
+    isPopular: false,
+    isRecommended: true,
+    isBanned: false,
+    chapters: [
+      { id: 'n3-c1', title: 'บทที่ 1: ความตายใต้แสงสปอตไลท์', price: 0, content: 'นาฬิกาตีบอกเวลาเที่ยงคืนตรง เสียงกรีดร้องดังลั่นมาจากห้องโถงหลักของงานประมูล ท่ามกลางซากปรักหักพังของตู้กระจกนิรภัย ร่างของมหาเศรษฐีผู้ทรงอิทธิพลนอนไร้ลมหายใจ โดยใบหน้าของเขาถูกสวมทับด้วยหน้ากากทองคำโบราณ!' }
+    ]
+  }
+];
+
+const CATEGORIES = ['ทั้งหมด', 'จีนกำลังภายใน', 'รักโรแมนติก', 'สืบสวนสอบสวน', 'แฟนตาซี', 'วาย / ยูริ'];
+
+const COIN_PACKAGES = [
+  { id: 'p1', coins: 35, price: 35, bonus: 0, tag: 'ยอดฮิต' },
+  { id: 'p2', coins: 65, price: 59, bonus: 5, tag: 'สุดคุ้ม' },
+  { id: 'p3', coins: 120, price: 99, bonus: 15, tag: 'แนะนำ' },
+  { id: 'p4', coins: 350, price: 299, bonus: 50, tag: 'ราชาเปย์' },
+];
+
+const ADMIN_EMAIL = 'admin@inkandgold.com';
+
+export default function App() {
+  useEffect(() => {
+    loadFonts();
+  }, []);
+
+  // === DYNAMIC SYSTEM SETTINGS ===
+  const [systemConfig, setSystemConfig] = useState({
+    commissionRate: 30, // % fee taken by platform
+    coinExchangeRate: 0.5, // 1 coin = 0.50 THB
+    withdrawMinCoins: 100, // min coins required to request withdrawal
+    bannerTitle: 'ลิขิตกระดานทองคำ',
+    bannerSubtitle: 'ทุกอณูอักษรแห่งวรรณศิลป์ ร่วมปลดล็อกจินตนาการความเลอค่าไปพร้อมกัน',
+    bannerTag: 'คัดสรรโดยบรรณาธิการพรีเมียม',
+    bannerGradient: 'from-[#0F2C2F] via-[#115E59] to-[#B45309]',
+    bannerLinkNovel: 'n1',
+    allowSelfVerify: false,
+    isMaintenance: false
+  });
+
+  // === USER DATABASE STATE ===
+  const [usersList, setUsersList] = useState([
+    {
+      email: 'reader@inkandgold.com',
+      username: 'ศศิธร_นักอ่านแสนรัก',
+      role: 'reader',
+      coins: 180,
+      purchasedChapters: ['n1-c1', 'n1-c2', 'n2-c1', 'n2-c2', 'n3-c1'], 
+      favorites: ['n1'],
+      isVerifiedAuthor: true,
+      authorName: 'รัญชนา',
+      withdrawBank: 'กสิกรไทย',
+      withdrawAccount: '098-x-xxxxx-2',
+      earningsCoins: 450,
+      isBanned: false
     },
-        },
+    {
+      email: 'admin@inkandgold.com',
+      username: 'แอดมินสูงสุด_สยามวรรณกรรม',
+      role: 'admin',
+      coins: 99999,
+      purchasedChapters: ['n1-c1', 'n1-c2', 'n1-c3', 'n2-c1'],
+      favorites: ['n1', 'n2'],
+      isVerifiedAuthor: true,
+      authorName: 'แอดมินเวิร์ส',
+      withdrawBank: 'กรุงเทพ',
+      withdrawAccount: '111-2-33333-4',
+      earningsCoins: 0,
+      isBanned: false
+    }
+  ]);
+
+  const [userEmail, setUserEmail] = useState('reader@inkandgold.com');
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginInputEmail, setLoginInputEmail] = useState('');
+
+  // === NOVELS DATABASE ===
+  const [novels, setNovels] = useState(INITIAL_NOVELS);
+  const [currentView, setCurrentView] = useState('home'); // home | browse | detail | reading | author-dashboard | wallet | studio | admin-dashboard | verify-author
+  const [selectedNovelId, setSelectedNovelId] = useState('n1');
+  const [selectedChapterIndex, setSelectedChapterIndex] = useState(0);
+
+  // === SEARCH & FILTER ===
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('ทั้งหมด');
+  const [selectedSort, setSelectedSort] = useState('most-views'); // most-views | rating | latest
+
+  // === FORMS STATE ===
+  const [novelForm, setNovelForm] = useState({ title: '', category: 'จีนกำลังภายใน', synopsis: '', gradient: 'from-[#0F3A40] via-[#1E5E65] to-[#B45309]' });
+  const [chapterForm, setChapterForm] = useState({ title: '', content: '', price: 3 });
+  const [verifyForm, setVerifyForm] = useState({ penName: '', bank: 'กสิกรไทย', account: '' });
+  const [storyNotes, setStoryNotes] = useState('จ้าวหนิงลี่ต้องการค้นหาความลับปมมังกรซ่อนเล็บ');
+  const [editingUser, setEditingUser] = useState(null);
+  const [showEditUserModal, setShowEditUserModal] = useState(false);
+
+  // === INTERACTION STATES ===
+  const [toast, setToast] = useState(null);
+  const [commentInput, setCommentInput] = useState('');
+  const [novelReviews, setNovelReviews] = useState({
+    'n1': [
+      { user: 'พยัคฆ์ราตรี', rating: 5, comment: 'สำนวนภาษาพรีเมียม สวยงามมากค่ะ สมชื่อ Ink & Gold จริงๆ ปมเรื่องแน่นมาก!', date: 'เมื่อวานนี้' },
+      { user: 'คุณแม่บ้านนักอ่าน', rating: 5, comment: 'นางเอกเก่งและฉลาดมากค่ะ สะใจกับการแก้แค้นสุดๆ คุ้มค่าเหรียญทอง!', date: '2 วันที่แล้ว' }
+    ]
+  });
+
+  // === QUEUE STATES ===
+  const [pendingAuthors, setPendingAuthors] = useState([
+    { id: 'auth-1', username: 'ศศิธร_นักอ่านแสนรัก', email: 'reader@inkandgold.com', penName: 'รัญชนา', date: '1 วันที่แล้ว', documentUrl: 'ID_CARD_MOCK.jpg', withdrawBank: 'กสิกรไทย', withdrawAccount: '098-x-xxxxx-2' }
+  ]);
+  const [pendingWithdrawals, setPendingWithdrawals] = useState([
+    { id: 'wd-1', authorName: 'รัญชนา', email: 'reader@inkandgold.com', coins: 500, cash: 250, bank: 'ไทยพาณิชย์', account: '123-x-xxxx-9', date: '3 ชั่วโมงที่แล้ว' }
+  ]);
+  const [adminTab, setAdminTab] = useState('overview'); // overview | verification | withdrawals | moderation | user-db | settings
+
+  // === READING CONFIG ===
+  const [readingTheme, setReadingTheme] = useState('cream'); 
+  const [readingFontSize, setReadingFontSize] = useState(18);
+
+  const triggerToast = (message, type = 'success') => {
+    setToast({ message, type });
+    setTimeout(() => setToast(null), 3000);
+  };
+
+  // === SAFE DATABASE ACCESS FOR ACTIVE USER ===
+  const activeUser = usersList.find(u => u.email === userEmail) || usersList[0] || {
+    email: 'guest@inkandgold.com',
+    username: 'ผู้เยี่ยมชม',
+    role: 'reader',
+    coins: 0,
+    purchasedChapters: [],
+    favorites: [],
+    isVerifiedAuthor: false,
+    authorName: '',
+    withdrawBank: '',
+    withdrawAccount: '',
+    earningsCoins: 0,
+    isBanned: false
+  };
+
+  const updateUserInDatabase = (email, updatedFields) => {
+    setUsersList(prev => prev.map(u => u.email === email ? { ...u, ...updatedFields } : u));
+  };
+
+  // === BUY COINS FLOW ===
+  const handleTopUpCoins = (pkg) => {
+    const nextCoins = (activeUser.coins || 0) + pkg.coins + pkg.bonus;
+    updateUserInDatabase(activeUser.email, { coins: nextCoins });
+    triggerToast(`เติมเงินสำเร็จแล้ว! ได้รับ ${pkg.coins + pkg.bonus} คอยน์ทอง`, 'success');
+    setCurrentView('home');
+  };
+
+  // === UNLOCK CHAPTER FLOW ===
+  const handleUnlockChapter = (novel, chapter, chIdx) => {
+    if (activeUser.coins < chapter.price) {
+      triggerToast('ยอดเหรียญทองของคุณไม่พอ กรุณาเติมเหรียญก่อนนะคะ', 'error');
+      setCurrentView('wallet');
+      return;
+    }
+
+    const nextCoinsReader = activeUser.coins - chapter.price;
+    const nextPurchased = [...(activeUser.purchasedChapters || []), chapter.id];
+
+    // Calculate payouts
+    const platformCutCoins = chapter.price * (systemConfig.commissionRate / 100);
+    const authorCutCoins = chapter.price * (1 - systemConfig.commissionRate / 100);
+
+    // Credit author
+    const targetAuthor = usersList.find(u => u.email === novel.authorEmail || u.authorName === novel.author);
+    if (targetAuthor) {
+      const nextAuthorEarnings = (targetAuthor.earningsCoins || 0) + authorCutCoins;
+      updateUserInDatabase(targetAuthor.email, { earningsCoins: nextAuthorEarnings });
+    }
+
+    // Update global platform metrics
+    setPlatformStats(prev => ({
+      ...prev,
+      totalSystemCoinsEarned: prev.totalSystemCoinsEarned + platformCutCoins,
+      totalSalesVolumeCoins: prev.totalSalesVolumeCoins + chapter.price
+    }));
+
+    // Save reader modifications
+    updateUserInDatabase(activeUser.email, { 
+      coins: nextCoinsReader, 
+      purchasedChapters: nextPurchased 
+    });
+
+    triggerToast(`ปลดล็อกตอน "${chapter.title}" สำเร็จแล้ว!`, 'success');
+    setSelectedChapterIndex(chIdx);
+    setCurrentView('reading');
+  };
+
+  // === AUTHOR WITHDRAWAL FLOW ===
+  const handleWithdrawalRequest = () => {
+    if ((activeUser.earningsCoins || 0) < systemConfig.withdrawMinCoins) {
+      triggerToast(`ถอนขั้นต่ำคือ ${systemConfig.withdrawMinCoins} คอยน์ทอง (คุณมี ${activeUser.earningsCoins || 0} คอยน์)`, 'error');
+      return;
+    }
+
+    if (!activeUser.withdrawBank || !activeUser.withdrawAccount) {
+      triggerToast('กรุณากรอกข้อมูลบัญชีธนาคารให้ครบถ้วนก่อนส่งคำขอถอนเงิน', 'error');
+      return;
+    }
+
+    const cashOut = activeUser.earningsCoins * systemConfig.coinExchangeRate;
+    const newRequest = {
+      id: `wd-req-${Date.now()}`,
+      authorName: activeUser.authorName || activeUser.username,
+      email: activeUser.email,
+      coins: activeUser.earningsCoins,
+      cash: cashOut,
+      bank: activeUser.withdrawBank,
+      account: activeUser.withdrawAccount,
+      date: 'เมื่อสักครู่นี้'
+    };
+
+    setPendingWithdrawals(prev => [newRequest, ...prev]);
+    updateUserInDatabase(activeUser.email, { earningsCoins: 0 });
+    triggerToast(`ส่งคำขอถอนเงินจำนวน ฿${cashOut.toLocaleString()} บาท ไปยังแอดมินแล้ว`, 'success');
+  };
+
+  // === AUTHOR VERIFICATION FLOW ===
+  const handleAuthorVerificationSubmit = (e) => {
+    e.preventDefault();
+    if (!verifyForm.penName || !verifyForm.account) {
+      triggerToast('กรุณากรอกข้อมูลความจริงให้ครบถ้วน', 'error');
+      return;
+    }
+
+    if (systemConfig.allowSelfVerify) {
+      updateUserInDatabase(activeUser.email, {
+        isVerifiedAuthor: true,
+        authorName: verifyForm.penName,
+        withdrawBank: verifyForm.bank,
+        withdrawAccount: verifyForm.account,
+        role: 'author'
+      });
+      triggerToast(`ยืนยันตัวตนอัตโนมัติสำเร็จ! นามปากกา: ${verifyForm.penName}`, 'success');
+      setCurrentView('author-dashboard');
+    } else {
+      const newReq = {
+        id: `auth-${Date.now()}`,
+        username: activeUser.username,
+        email: activeUser.email,
+        penName: verifyForm.penName,
+        date: 'เมื่อสักครู่นี้',
+        documentUrl: 'VERIFICATION_ATTACHMENT.jpg',
+        withdrawBank: verifyForm.bank,
+        withdrawAccount: verifyForm.account
+      };
+      setPendingAuthors(prev => [newReq, ...prev]);
+      triggerToast('ส่งหลักฐานยืนยันไปยังผู้ดูแลระบบเรียบร้อยแล้ว โปรดรอการตรวจสอบเอกสาร', 'success');
+    }
+  };
+
+  // === PUBLISH NEW NOVEL ===
+  const handleCreateNovelSubmit = (e) => {
+    e.preventDefault();
+    if (!novelForm.title || !novelForm.synopsis) {
+      triggerToast('กรุณากรอกข้อมูลนิยายให้ครบถ้วน', 'error');
+      return;
+    }
+
+    const newNovelObj = {
+      id: `n-${Date.now()}`,
+      title: novelForm.title,
+      author: activeUser.authorName || activeUser.username,
+      authorEmail: activeUser.email,
+      category: novelForm.category,
+      coverGradient: novelForm.gradient,
+      synopsis: novelForm.synopsis,
+      rating: 5.0,
+      reviewsCount: 0,
+      views: 0,
+      favorites: 0,
+      isBanned: false,
+      chapters: []
+    };
+
+    setNovels(prev => [newNovelObj, ...prev]);
+    triggerToast(`เปิดเรื่องนิยายใหม่ "${novelForm.title}" สำเร็จ!`, 'success');
+    setNovelForm({ title: '', category: 'จีนกำลังภายใน', synopsis: '', gradient: 'from-[#0F3A40] via-[#1E5E65] to-[#B45309]' });
+  };
+
+  // === PUBLISH NEW CHAPTER ===
+  const handlePublishNewChapter = (novelId) => {
+    if (!chapterForm.title || !chapterForm.content) {
+      triggerToast('กรุณากรอกชื่อเรื่องและเนื้อหานิยาย', 'error');
+      return;
+    }
+    const newChId = `ch-${Date.now()}`;
+    const newChapterObj = {
+      id: newChId,
+      title: chapterForm.title,
+      price: Number(chapterForm.price) || 0,
+      content: chapterForm.content
+    };
+
+    setNovels(prevNovels => prevNovels.map(n => {
+      if (n.id === novelId) {
+        return { ...n, chapters: [...(n.chapters || []), newChapterObj] };
       }
-    </script>
-<style>
-        /* Custom overrides to ensure precise line weights matching guidance */
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-    </style>
-</head>
-<body class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
-<!-- JSON Component: TopNavBar -->
-<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-50">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<!-- Brand -->
-<div class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight">
-                Aureate
+      return n;
+    }));
+
+    // Auto unlock for author
+    const nextPurchased = [...(activeUser.purchasedChapters || []), newChId];
+    updateUserInDatabase(activeUser.email, { purchasedChapters: nextPurchased });
+
+    triggerToast('เผยแพร่ตอนใหม่สำเร็จแล้ว!', 'success');
+    setChapterForm({ title: '', content: '', price: 3 });
+    setCurrentView('author-dashboard');
+  };
+
+  // === ADMIN ACTION HANDLERS ===
+  const handleApproveAuthorByAdmin = (req) => {
+    setPendingAuthors(prev => prev.filter(p => p.id !== req.id));
+    updateUserInDatabase(req.email, {
+      isVerifiedAuthor: true,
+      authorName: req.penName,
+      withdrawBank: req.withdrawBank,
+      withdrawAccount: req.withdrawAccount,
+      role: 'author'
+    });
+    triggerToast(`อนุมัติผู้แต่งท่านใหม่ "${req.penName}" เรียบร้อยแล้ว`, 'success');
+  };
+
+  const handleApproveWithdrawalByAdmin = (req) => {
+    setPendingWithdrawals(prev => prev.filter(w => w.id !== req.id));
+    triggerToast(`โอนเงินจำนวน ฿${req.cash} บาท สำเร็จแล้ว!`, 'success');
+  };
+
+  const handleSaveUserByAdmin = (e) => {
+    e.preventDefault();
+    if (!editingUser) return;
+    updateUserInDatabase(editingUser.email, {
+      username: editingUser.username,
+      coins: Number(editingUser.coins) || 0,
+      earningsCoins: Number(editingUser.earningsCoins) || 0,
+      role: editingUser.role,
+      isVerifiedAuthor: editingUser.isVerifiedAuthor,
+      isBanned: editingUser.isBanned
+    });
+    setShowEditUserModal(false);
+    setEditingUser(null);
+    triggerToast('บันทึกการเปลี่ยนแปลงบัญชีในฐานข้อมูลหลักเรียบร้อยแล้ว', 'success');
+  };
+
+  // === SYSTEM METRICS AND COMPUTES ===
+  const [platformStats, setPlatformStats] = useState({
+    totalSystemCoinsEarned: 18450,
+    totalSalesVolumeCoins: 61500,
+    activeUsersCount: 1540
+  });
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const cleanEmail = loginInputEmail.trim().toLowerCase();
+    if (!cleanEmail) return;
+
+    const existingUser = usersList.find(u => u.email === cleanEmail);
+    if (existingUser) {
+      setUserEmail(cleanEmail);
+      setIsLoggedIn(true);
+      setShowLoginModal(false);
+      triggerToast(`ยินดีต้อนรับคุณ ${existingUser.username} กลับสู่ระบบ`, 'success');
+      if (existingUser.role === 'admin') setCurrentView('admin-dashboard');
+    } else {
+      // Create new user account automatically on first mock login
+      const prefix = cleanEmail.split('@')[0] || 'User';
+      const newUser = {
+        email: cleanEmail,
+        username: prefix + '_InkGold',
+        role: cleanEmail === ADMIN_EMAIL ? 'admin' : 'reader',
+        coins: 100,
+        purchasedChapters: ['n1-c1', 'n2-c1'],
+        favorites: [],
+        isVerifiedAuthor: false,
+        authorName: '',
+        withdrawBank: '',
+        withdrawAccount: '',
+        earningsCoins: 0,
+        isBanned: false
+      };
+      setUsersList(prev => [...prev, newUser]);
+      setUserEmail(cleanEmail);
+      setIsLoggedIn(true);
+      setShowLoginModal(false);
+      triggerToast(`ยินดีต้อนรับสมาชิกใหม่คุณ ${prefix}! ได้รับเหรียญต้อนรับฟรี 100 เหรียญ`, 'success');
+    }
+    setLoginInputEmail('');
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUserEmail('');
+    setCurrentView('home');
+    triggerToast('ออกจากระบบเรียบร้อยแล้ว', 'info');
+  };
+
+  const handleToggleFavorite = (novelId, e) => {
+    e?.stopPropagation();
+    const isFav = activeUser.favorites?.includes(novelId);
+    let nextFavs = isFav 
+      ? activeUser.favorites.filter(id => id !== novelId)
+      : [...(activeUser.favorites || []), novelId];
+    
+    updateUserInDatabase(activeUser.email, { favorites: nextFavs });
+    triggerToast(isFav ? 'ลบออกจากรายการโปรดแล้ว' : 'เพิ่มนิยายเข้าไปในชั้นหนังสือสำเร็จ', 'success');
+  };
+
+  // === SAFE RENDER COMPUTES ===
+  const activeNovel = novels.find(n => n.id === selectedNovelId) || novels[0] || {};
+  const visibleNovels = novels.filter(n => !n?.isBanned);
+
+  // Filters & Search Catalog
+  const sortedCatalog = [...visibleNovels].filter(n => {
+    const searchLower = searchQuery.toLowerCase();
+    const matchesSearch = (n?.title?.toLowerCase()?.includes(searchLower)) || (n?.author?.toLowerCase()?.includes(searchLower));
+    const matchesCategory = selectedCategory === 'ทั้งหมด' || n?.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  }).sort((a, b) => {
+    if (selectedSort === 'most-views') return b.views - a.views;
+    if (selectedSort === 'rating') return b.rating - a.rating;
+    return b.id.localeCompare(a.id); // Default/Latest
+  });
+
+  const topReadNovels = [...visibleNovels].sort((a, b) => b.views - a.views).slice(0, 3);
+  const currentChapter = activeNovel?.chapters?.[selectedChapterIndex] || activeNovel?.chapters?.[0];
+
+  const isUserAdmin = isLoggedIn && activeUser?.email?.toLowerCase() === ADMIN_EMAIL;
+
+  // Render maintenance page
+  if (systemConfig.isMaintenance && activeUser?.role !== 'admin') {
+    return (
+      <div className="min-h-screen bg-[#0F2C2F] text-[#FAF6EE] flex items-center justify-center p-6 text-center antialiased">
+        <div className="max-w-md space-y-6 border border-[#B45309]/30 p-8 rounded-3xl bg-[#FAF6EE]/5 backdrop-blur-md">
+          <div className="w-16 h-16 bg-[#B45309]/20 rounded-full flex items-center justify-center text-[#F59E0B] mx-auto">
+            <Hammer className="w-8 h-8" />
+          </div>
+          <h1 className="text-3xl font-extrabold" style={{ fontFamily: 'Lora, serif' }}>ระบบกำลังปรับปรุง</h1>
+          <p className="text-sm text-slate-300 leading-relaxed font-light">
+            ทางผู้ดูแลระบบสยามวรรณกรรม Ink & Gold ขออภัยในความไม่สะดวก ขณะนี้อยู่ระหว่างการยกระดับประสิทธิภาพคลังนิยายเพื่อความรวดเร็วและพรีเมียม โปรดตรวจสอบใหม่อีกครั้งในภายหลัง
+          </p>
+          <div className="text-[10px] text-slate-500 uppercase tracking-widest">Aureate Maintenance Mode</div>
+        </div>
+      </div>
+    );
+  }
+
+  // Render banned page
+  if (activeUser?.isBanned) {
+    return (
+      <div className="min-h-screen bg-[#0F2C2F] text-[#FAF6EE] flex items-center justify-center p-6 text-center antialiased">
+        <div className="max-w-md space-y-6 border border-red-900 p-8 rounded-3xl bg-red-900/10 backdrop-blur-md">
+          <div className="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center text-red-500 mx-auto">
+            <ShieldAlert className="w-8 h-8" />
+          </div>
+          <h1 className="text-3xl font-extrabold" style={{ fontFamily: 'Lora, serif' }}>สิทธิ์บัญชีถูกระงับ</h1>
+          <p className="text-sm text-slate-300 leading-relaxed font-light">
+            บัญชีผู้ใช้งาน ({activeUser.email}) นี้ ทำการละเมิดหลักเกณฑ์ชุมชนอย่างร้ายแรงและถูกปิดกั้นการใช้สิทธิ์ระบบ Ink & Gold ถาวร
+          </p>
+          <button 
+            onClick={handleLogout}
+            className="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition-all"
+          >
+            ออกจากระบบ
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-[#FAF6EE] text-[#0F2C2F] font-sans flex flex-col antialiased">
+      
+      {/* ================= PLATFORM BANNER FOR ADMIN MAINTENANCE WARNING ================= */}
+      {systemConfig.isMaintenance && (
+        <div className="bg-[#B45309] text-[#FAF6EE] py-2 px-4 text-center text-xs font-bold tracking-wide flex items-center justify-center gap-2">
+          <AlertCircle className="w-4 h-4 text-[#FAF6EE]" />
+          <span>ขณะนี้ระบบอยู่ในสถานะ "ปิดปรับปรุงโดยแอดมิน" ผู้ใช้ทั่วไปจะไม่สามารถเข้าถึงหน้าเว็บได้ในขณะนี้</span>
+        </div>
+      )}
+
+      {/* ================= HEADER BAR ================= */}
+      <header className="sticky top-0 z-40 bg-[#0F2C2F] text-white border-b border-[#B45309]/20 shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+          
+          {/* LOGO */}
+          <div 
+            onClick={() => { setCurrentView('home'); setSelectedCategory('ทั้งหมด'); }} 
+            className="flex items-center gap-2.5 cursor-pointer group"
+          >
+            <div className="p-2.5 bg-gradient-to-tr from-[#B45309] to-[#F59E0B] rounded-xl text-white shadow-lg shadow-[#B45309]/30 group-hover:scale-105 transition-transform duration-300">
+              <BookOpen className="w-6 h-6 text-[#FAF6EE]" />
             </div>
-<!-- Navigation Shell (Desktop) -->
-<nav class="hidden md:flex gap-gutter font-body-md text-body-md items-center">
-<!-- Active Item: Browse (Assuming homepage intent is discovery) -->
-<a class="text-primary font-bold border-b-2 border-primary pb-1 transition-all duration-300 ease-in-out" href="#">Browse</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 ease-in-out" href="#">Categories</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 ease-in-out" href="#">Write</a>
-</nav>
-<!-- Actions -->
-<div class="flex items-center gap-6">
-<button class="text-primary hover:text-secondary transition-colors duration-300 flex items-center justify-center">
-<span class="material-symbols-outlined">search</span>
-</button>
-<div class="hidden md:flex items-center gap-4 pl-4 border-l border-outline-variant">
-<button class="text-primary hover:text-secondary transition-colors duration-300 flex items-center justify-center">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-</button>
-<button class="text-primary hover:text-secondary transition-colors duration-300 flex items-center justify-center">
-<span class="material-symbols-outlined">account_circle</span>
-</button>
-</div>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden text-primary flex items-center justify-center">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</header>
-<main>
-<!-- Hero Section: Featured Narrative -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="md:col-span-5 flex flex-col gap-6 order-2 md:order-1">
-<span class="font-label-md text-label-md text-secondary uppercase tracking-widest flex items-center gap-2">
-<span class="w-8 h-px bg-secondary"></span> Editor's Selection
-                    </span>
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight">
-                        The Architecture of Silence
-                    </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
-                        A breathtaking exploration of memory and structural decay. Set within the labyrinthine halls of a forgotten city, this month's featured novel weaves a tale where silence speaks louder than words.
-                    </p>
-<div class="flex flex-wrap gap-4 mt-6">
-<button class="bg-primary text-on-primary h-12 px-8 font-label-md text-label-md rounded flex items-center justify-center hover:bg-primary-container transition-colors">
-                            Read Excerpt
-                        </button>
-<button class="border border-secondary text-secondary h-12 px-8 font-label-md text-label-md rounded flex items-center justify-center hover:bg-surface-variant transition-colors">
-                            Add to Library
-                        </button>
-</div>
-</div>
-<div class="md:col-span-7 order-1 md:order-2 mb-8 md:mb-0">
-<div class="relative w-full h-[400px] md:h-[600px] bg-surface-dim border border-outline-variant p-4">
-<img class="w-full h-full object-cover shadow-sm" data-alt="A highly detailed, sophisticated editorial composition of a beautifully bound book resting on a dark marble surface. The lighting is dramatic and moody, utilizing deep emerald and teal shadows contrasting with warm, amber highlights striking the gold-foil text on the spine. The aesthetic evokes a vibrant, intellectual literary magazine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVwnTq0i0RhlD-MKu362Ci3pJMkv1yldsAf83Rnsxg6tvnk2VPEGT0ORkMJukhPXQy8waLyNd55fECEXbItz6oe0wiH2DTwn16pdcUVOeeT-hZDEhFFK0Cn4stnbUjpUApWobnx3AcEztA_9xZmxyFTjvzZFM-L08BaEPanO6oBSm17KtBILk9moUqlhpef0QdqLPjcD8cJd8OAZ6FK3mxwO4aRG7u8dZjHLMuZNYAhm-VyauGdbavGt72vv5IUh6h-_An5o9KeFPT"/>
-<!-- Subtle decorative element -->
-<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary-fixed-dim/20 rounded-full blur-2xl pointer-events-none"></div>
-</div>
-</div>
-</div>
-</section>
-<!-- Curated Bento Grid -->
-<section class="border-t border-surface-variant">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-32">
-<div class="flex justify-between items-end mb-12">
-<h2 class="font-headline-md text-headline-md text-primary">Curated Narratives</h2>
-<a class="hidden md:flex font-label-md text-label-md text-secondary hover:text-primary transition-colors items-center gap-1 uppercase tracking-widest" href="#">
-                        View All <span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
-</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-unit auto-rows-[250px] md:auto-rows-[300px]">
-<!-- Large Feature Card -->
-<article class="md:col-span-2 md:row-span-2 border border-outline-variant bg-surface-bright relative group overflow-hidden cursor-pointer flex flex-col justify-end">
-<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A cinematic scene capturing a figure in a flowing teal garment standing on a misty cliff edge at dawn. The sky is a gradient of soft cream and warm amber, creating a feeling of epic fantasy and vibrant sophistication. The image is framed within a modern, minimalist border." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlZ-_2qBSVK8jWlyyfwuQy-n9S63aXDbtSvfcOn9BVdonUwnoCVQCXOTUkdCcJlwSWDJWOEVswWANnE2SrYXStMb4NP5e-LhKk_Yo_5HgWQksseR08KEm-Xq0lPIQurOxelIwFnI8A_dYEVDfXfHUvIxrRicYPfb_1qpJb_59mZfOW01UXK7cVD1dyRZJihu5pURtNrjg5T5X0GBul3gbzlyDf1YLzVnyGVagKfb3F-Z_n_6liBg9C-QCpMjDYbfGqzajjqX6_KK0d"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
-<div class="relative z-10 p-8 flex flex-col gap-3">
-<span class="bg-surface/10 border border-surface/20 text-on-primary font-label-md text-label-md px-4 py-1.5 rounded-full w-fit backdrop-blur-md">Fantasy Epic</span>
-<h3 class="font-display-lg-mobile text-display-lg-mobile text-on-primary leading-tight">Crown of Glass &amp; Shadow</h3>
-<p class="font-body-md text-body-md text-on-primary/80 line-clamp-2 max-w-md">An intricate political drama wrapped in ancient mythology. A story that redefines the modern fantasy genre with its stark realism.</p>
-</div>
-</article>
-<!-- Small Card 1 -->
-<article class="border border-outline-variant bg-surface p-6 flex flex-col hover:bg-surface-bright transition-colors cursor-pointer group">
-<span class="font-label-md text-label-md text-secondary mb-4 uppercase tracking-widest">Historical Fiction</span>
-<h3 class="font-title-lg text-title-lg text-primary flex-grow group-hover:text-secondary transition-colors">The Alchemist's Daughter</h3>
-<div class="mt-auto flex justify-between items-center text-on-surface-variant border-t border-outline-variant/50 pt-4">
-<span class="font-body-md text-body-md">By E. Thorne</span>
-<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
-</div>
-</article>
-<!-- Small Card 2 with subtle image background -->
-<article class="border border-outline-variant bg-surface-dim relative overflow-hidden flex flex-col p-6 hover:bg-surface transition-colors cursor-pointer group">
-<img class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-multiply group-hover:opacity-30 transition-opacity" data-alt="An abstract macro shot of deep emerald ink blooming in water against a pale cream background. The organic shapes suggest creativity and fluid thought, fitting perfectly into a sophisticated literary design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbtaj31TFa8mX8LxE_uObfv1p7JRXUucnG9jOweXRmS-Cy6xSCKKdDTbixCYRTK-FLHNHZ_xiy7XlHbnhHkXZiWUoze67KL2hk1R3xgK9lIS1tDbOBmf7uANtJwZLjxFezlKZHP9HziZ8vIDs5VVMgXKYY5dplPkkuZc92xByaLcntCT0tAxtaoIwarx-TiTSf-JZ7uEpSIAFZ50CtoAoIaLk93fbA1mVIcs-HSG4ejFyYk4CgKfpYFcfUZe3JDBGvpXSN0xdDhUDz"/>
-<div class="relative z-10 flex flex-col h-full">
-<span class="font-label-md text-label-md text-primary mb-4 uppercase tracking-widest">Poetry Collection</span>
-<h3 class="font-title-lg text-title-lg text-primary flex-grow">Whispers in the Amber</h3>
-<div class="mt-auto flex justify-between items-center text-on-surface-variant border-t border-primary/20 pt-4">
-<span class="font-body-md text-body-md">By L. Vance</span>
-<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
-</div>
-</div>
-</article>
-<!-- Wide Horizontal Card -->
-<article class="md:col-span-2 border border-outline-variant bg-surface flex flex-col md:flex-row hover:bg-surface-bright transition-colors cursor-pointer group">
-<div class="w-full md:w-1/3 h-48 md:h-full bg-surface-dim border-b md:border-b-0 md:border-r border-outline-variant shrink-0 relative overflow-hidden">
-<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-500" data-alt="A minimalist architectural photograph showing a sharply angled modern building casting deep shadows. A single warm amber light glows from one window. The image uses stark geometry and a muted palette of slate blues, creams, and deep teals to convey a mood of contemporary isolation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCsBc9OmXaC7cIhkI6Qri0i7tvjCud5lRAC5W26xWstkpOO65ktARzJ45TvsHj0WoCQCUPVkgNlin6pYGNIh01rVjwvLD2nyRhvrIYKu5t0uNtbm7hv-cshSY2UhZOOrnCysQxzSFofflL7gnmhgrwivuGCTZKsY2AWkZlOQgAip6pzmdwVYZKZpa-sb3wWEBI5EaxXzRBS-UHlO5q9LcSDmXZ44St3wFBX-bFWZZ0Z0GXZZjwcDTb6E2KQkzreeDo1E4ZZKGhPSVE"/>
-</div>
-<div class="p-6 md:p-8 flex flex-col justify-center w-full">
-<span class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-widest">Contemporary</span>
-<h3 class="font-title-lg text-title-lg text-primary mb-3 group-hover:text-secondary transition-colors">Neon Gods in Daylight</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">An unapologetic look at fame, identity, and truth in the modern digital age.</p>
-<span class="font-body-md text-body-md text-primary mt-auto">Read Review →</span>
-</div>
-</article>
-</div>
-</div>
-</section>
-<!-- Trending Discussions (Editorial List Layout) -->
-<section class="bg-surface-bright border-t border-surface-variant">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-32 grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<div class="md:col-span-4 md:pr-12 mb-12 md:mb-0 flex flex-col">
-<h2 class="font-headline-md text-headline-md text-primary mb-6">Trending Discourse</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">
-                        Join the conversation. Dive deep into the thematic undercurrents of this month's most discussed works with fellow readers and authors.
-                    </p>
-<button class="w-fit border border-outline text-primary h-12 px-6 font-label-md text-label-md rounded flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors mt-auto">
-                        Explore Forums <span class="material-symbols-outlined text-[18px]">forum</span>
-</button>
-</div>
-<div class="md:col-span-8 flex flex-col">
-<!-- Editorial List Items -->
-<a class="py-6 border-t border-outline-variant flex justify-between items-center gap-6 hover:bg-surface transition-colors px-4 -mx-4 group" href="#">
-<div class="flex flex-col gap-2">
-<h4 class="font-title-lg text-title-lg text-primary group-hover:text-secondary transition-colors">The Morality of the 'Anti-Hero' in Modern Fantasy</h4>
-<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-on-surface-variant font-label-md text-label-md">
-<span class="flex items-center gap-1 text-secondary"><span class="material-symbols-outlined text-[16px]">local_fire_department</span> Hot</span>
-<span>142 replies</span>
-<span class="hidden md:inline text-outline-variant">•</span>
-<span>Started by @LoreKeeper</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors shrink-0">arrow_forward</span>
-</a>
-<a class="py-6 border-t border-outline-variant flex justify-between items-center gap-6 hover:bg-surface transition-colors px-4 -mx-4 group" href="#">
-<div class="flex flex-col gap-2">
-<h4 class="font-title-lg text-title-lg text-primary group-hover:text-secondary transition-colors">Symbolism of Water in 'The Architecture of Silence'</h4>
-<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-on-surface-variant font-label-md text-label-md">
-<span>89 replies</span>
-<span class="hidden md:inline text-outline-variant">•</span>
-<span>Started by @CritiqueCentral</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors shrink-0">arrow_forward</span>
-</a>
-<a class="py-6 border-t border-b border-outline-variant flex justify-between items-center gap-6 hover:bg-surface transition-colors px-4 -mx-4 group" href="#">
-<div class="flex flex-col gap-2">
-<h4 class="font-title-lg text-title-lg text-primary group-hover:text-secondary transition-colors">World-Building Workshop: Crafting Believable Magic Systems</h4>
-<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-on-surface-variant font-label-md text-label-md">
-<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-xs">Workshop</span>
-<span>305 replies</span>
-<span class="hidden md:inline text-outline-variant">•</span>
-<span>Started by @AureateStaff</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors shrink-0">arrow_forward</span>
-</a>
-</div>
-</div>
-</section>
-</main>
-<!-- JSON Component: Footer -->
-<footer class="bg-primary w-full py-16 text-on-primary">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<!-- Brand Column -->
-<div class="col-span-1 md:col-span-1 flex flex-col gap-4 mb-8 md:mb-0">
-<div class="font-display-lg text-display-lg text-on-primary">
-                    Aureate
+            <div>
+              <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-[#F59E0B] via-[#FBBF24] to-[#FAF6EE] bg-clip-text text-transparent" style={{ fontFamily: 'Lora, serif' }}>
+                Ink & Gold
+              </span>
+              <p className="text-[9px] tracking-widest text-[#FBBF24] uppercase font-semibold">Aureate Narrative</p>
+            </div>
+          </div>
+
+          {/* MAIN SEARCH & EXPLORE BAR */}
+          <div className="hidden md:flex flex-1 max-w-sm relative">
+            <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+              <Search className="w-4 h-4 text-[#FAF6EE]/50" />
+            </span>
+            <input
+              type="text"
+              placeholder="ค้นหาเรื่องราวอันเลอค่า นามปากกา..."
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                if (currentView !== 'browse') setCurrentView('browse');
+              }}
+              className="w-full pl-11 pr-4 py-2 bg-white/10 text-[#FAF6EE] placeholder-[#FAF6EE]/50 border border-[#FAF6EE]/25 rounded-full focus:bg-[#FAF6EE] focus:text-[#0F2C2F] focus:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#B45309] transition-all text-xs"
+            />
+          </div>
+
+          {/* NAVIGATION CONTROLS */}
+          <div className="flex items-center gap-4">
+            
+            <button 
+              onClick={() => { setCurrentView('browse'); setSelectedCategory('ทั้งหมด'); }}
+              className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors flex items-center gap-1.5 ${currentView === 'browse' ? 'text-[#F59E0B] bg-[#FAF6EE]/10' : 'text-slate-200 hover:text-white'}`}
+            >
+              <Compass className="w-4 h-4" />
+              <span>เลือกดูนิยายทั้งหมด</span>
+            </button>
+
+            {/* WALLET DISPLAY */}
+            <div 
+              onClick={() => setCurrentView('wallet')}
+              className="flex items-center gap-1.5 px-3 py-2 bg-[#FAF6EE]/10 hover:bg-[#FAF6EE]/20 border border-[#B45309]/50 text-[#F59E0B] rounded-full text-xs font-bold cursor-pointer transition-colors"
+            >
+              <Coins className="w-4 h-4 text-amber-500 animate-pulse" />
+              <span>{activeUser.coins || 0} คอยน์</span>
+              <PlusCircle className="w-3.5 h-3.5 text-amber-500 ml-1" />
+            </div>
+
+            {/* INTEGRATED ACCOUNT FLOWS */}
+            {isLoggedIn ? (
+              <div className="flex items-center gap-3">
+                {/* ROLE SWITCH TAB */}
+                <div className="flex items-center bg-black/20 rounded-full p-1 border border-white/10 text-xs">
+                  <button 
+                    onClick={() => {
+                      updateUserInDatabase(activeUser.email, { role: 'reader' });
+                      setCurrentView('home');
+                      triggerToast('เข้าใช้งานในโหมดผู้อ่านนิยาย', 'info');
+                    }}
+                    className={`px-3 py-1 rounded-full font-semibold transition-all ${activeUser.role === 'reader' ? 'bg-[#FAF6EE] text-[#0F2C2F]' : 'text-slate-300'}`}
+                  >
+                    ผู้อ่าน
+                  </button>
+                  <button 
+                    onClick={() => {
+                      if (!activeUser.isVerifiedAuthor) {
+                        setVerifyForm({ penName: '', bank: 'กสิกรไทย', account: '' });
+                        setCurrentView('verify-author');
+                        triggerToast('กรุณาสมัครเพื่อรับสิทธิ์บัญชีนักแต่งนิยาย', 'info');
+                      } else {
+                        updateUserInDatabase(activeUser.email, { role: 'author' });
+                        setCurrentView('author-dashboard');
+                        triggerToast('สลับเข้าสตูดิโอเขียนเรื่องของคุณ', 'success');
+                      }
+                    }}
+                    className={`px-3 py-1 rounded-full font-semibold transition-all ${activeUser.role === 'author' ? 'bg-[#B45309] text-[#FAF6EE]' : 'text-slate-300'}`}
+                  >
+                    ผู้เขียน
+                  </button>
+                  {isUserAdmin && (
+                    <button 
+                      onClick={() => {
+                        updateUserInDatabase(activeUser.email, { role: 'admin' });
+                        setCurrentView('admin-dashboard');
+                        triggerToast('สลับเข้าสู่แดชบอร์ดผู้ควบคุมระบบหลังบ้าน', 'info');
+                      }}
+                      className={`px-3 py-1 rounded-full font-semibold transition-all ${activeUser.role === 'admin' ? 'bg-red-600 text-[#FAF6EE]' : 'text-slate-300'}`}
+                    >
+                      ผู้ดูแล ★
+                    </button>
+                  )}
                 </div>
-<p class="font-body-md text-body-md text-primary-fixed-dim opacity-80 mt-4">
-                    Cultivating vibrant literary narratives for the modern intellectual.
+
+                {/* USER PHOTO */}
+                <div 
+                  onClick={() => {
+                    if (activeUser.role === 'admin') setCurrentView('admin-dashboard');
+                    else if (activeUser.role === 'author') setCurrentView('author-dashboard');
+                    else setCurrentView('wallet');
+                  }}
+                  className="w-10 h-10 rounded-full border-2 border-[#B45309] bg-gradient-to-tr from-[#B45309] to-[#F59E0B] text-[#FAF6EE] flex items-center justify-center font-bold text-sm cursor-pointer shadow-md hover:scale-105 transition-transform"
+                >
+                  {activeUser.role === 'admin' ? 'Ad' : activeUser.username?.charAt(0)?.toUpperCase()}
+                </div>
+
+                {/* MOCK SESSION QUICK CHANGE HELPER */}
+                <div className="relative group">
+                  <button className="p-1.5 hover:bg-white/10 rounded-full text-slate-300 transition-colors">
+                    <Settings className="w-4 h-4" />
+                  </button>
+                  <div className="absolute right-0 mt-2 w-48 bg-white border border-[#B45309]/10 rounded-xl p-2.5 shadow-xl hidden group-hover:block z-50 text-slate-700">
+                    <p className="text-[10px] text-slate-400 font-extrabold uppercase mb-2">สลับบัญชีทดสอบ</p>
+                    <button 
+                      onClick={() => {
+                        setUserEmail('reader@inkandgold.com');
+                        setCurrentView('home');
+                        triggerToast('สลับไปบัญชีนักอ่านจำลองแล้ว');
+                      }}
+                      className="w-full text-left px-2 py-1.5 hover:bg-[#FAF6EE] rounded text-[11px] font-semibold"
+                    >
+                      ผู้อ่าน / ผู้เขียน (รัญชนา)
+                    </button>
+                    <button 
+                      onClick={() => {
+                        setUserEmail('admin@inkandgold.com');
+                        setCurrentView('admin-dashboard');
+                        triggerToast('สลับไปบัญชีแอดมินระบบแล้ว');
+                      }}
+                      className="w-full text-left px-2 py-1.5 hover:bg-[#FAF6EE] rounded text-[11px] font-bold text-red-600"
+                    >
+                      ผู้ดูแลระบบ (Admin)
+                    </button>
+                  </div>
+                </div>
+
+                <button 
+                  onClick={handleLogout}
+                  className="p-2 hover:bg-white/10 rounded-full text-slate-300 hover:text-red-400 transition-colors"
+                  title="ออกจากระบบ"
+                >
+                  <LogOut className="w-4 h-4" />
+                </button>
+              </div>
+            ) : (
+              <button 
+                onClick={() => setShowLoginModal(true)}
+                className="px-5 py-2 rounded-full bg-[#B45309] hover:bg-[#D97706] text-white font-bold text-xs transition-colors shadow-lg shadow-[#B45309]/20"
+              >
+                เข้าสู่ระบบ / สมัครสมาชิก
+              </button>
+            )}
+
+          </div>
+        </div>
+      </header>
+
+      {/* ================= MAIN CONTAINER ================= */}
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+        {/* ================= VIEW: HOME ================= */}
+        {currentView === 'home' && (
+          <div className="space-y-12 animate-fadeIn">
+            
+            {/* HERO PROMOTION BANNER */}
+            <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-r ${systemConfig.bannerGradient} text-white p-8 sm:p-12 shadow-2xl border border-white/5`}>
+              <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-25 pointer-events-none bg-[radial-gradient(circle_at_right,_var(--tw-gradient-stops))] from-[#FAF6EE] via-[#FBBF24] to-transparent"></div>
+              
+              <div className="relative z-10 max-w-xl space-y-5">
+                <span className="px-3 py-1 bg-[#B45309]/40 text-[#F59E0B] border border-[#B45309]/50 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  {systemConfig.bannerTag}
+                </span>
+                <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight" style={{ fontFamily: 'Lora, serif' }}>
+                  {systemConfig.bannerTitle}
+                </h1>
+                <p className="text-xs text-slate-200 leading-relaxed font-normal">
+                  {systemConfig.bannerSubtitle}
                 </p>
-</div>
-<!-- Links Columns -->
-<div class="col-span-1 md:col-span-3 flex flex-col md:flex-row justify-end gap-12 md:gap-24">
-<div class="flex flex-col gap-4">
-<span class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest mb-2">Platform</span>
-<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">About Us</a>
-<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">Contact</a>
-<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">Press Kit</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest mb-2">Legal</span>
-<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
-<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
-</div>
-</div>
-<!-- Copyright (Bottom Row) -->
-<div class="col-span-1 md:col-span-4 mt-16 pt-8 border-t border-primary-fixed-dim/20 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-body-md text-body-md text-primary-fixed-dim opacity-60">
-                    © 2024 Aureate Literary. All rights reserved.
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <button 
+                    onClick={() => {
+                      setSelectedNovelId(systemConfig.bannerLinkNovel || 'n1');
+                      setCurrentView('detail');
+                    }}
+                    className="px-6 py-3 bg-[#B45309] hover:bg-[#D97706] text-white rounded-xl font-bold text-xs transition-colors flex items-center gap-1.5 shadow-lg shadow-[#B45309]/30"
+                  >
+                    <span>อ่านเลยตอนนี้</span> <ChevronRight className="w-4 h-4" />
+                  </button>
+                  <button 
+                    onClick={() => setCurrentView('browse')}
+                    className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl font-bold text-xs transition-colors border border-white/20"
+                  >
+                    <span>คลังนิยายทั้งหมด</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTIONS: CATEGORIES SHORTCUT */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              {CATEGORIES.slice(1).map(cat => (
+                <div 
+                  key={cat}
+                  onClick={() => { setSelectedCategory(cat); setCurrentView('browse'); }}
+                  className="bg-white border border-[#B45309]/10 hover:border-[#B45309] rounded-2xl p-4 text-center cursor-pointer hover:shadow-md transition-all group"
+                >
+                  <BookOpen className="w-5 h-5 text-[#B45309] mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs font-bold text-[#0F2C2F]">{cat}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* SECTIONS: RECOMMENDED BY EDITORS */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-[#B45309]" />
+                <h2 className="text-xl font-extrabold text-[#0F2C2F] tracking-tight" style={{ fontFamily: 'Lora, serif' }}>นิยายแนะนำเกรดพรีเมียม</h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {visibleNovels.filter(n => n.isRecommended).map(novel => (
+                  <div 
+                    key={novel.id}
+                    onClick={() => { setSelectedNovelId(novel.id); setCurrentView('detail'); }}
+                    className="flex gap-4 p-5 bg-white border border-[#B45309]/10 rounded-2xl hover:shadow-xl hover:border-[#B45309]/40 transition-all cursor-pointer group"
+                  >
+                    <div className={`w-28 h-36 bg-gradient-to-br ${novel.coverGradient} rounded-xl shadow-md flex flex-col justify-between p-3 text-white flex-shrink-0 relative overflow-hidden group-hover:scale-102 transition-transform duration-300`}>
+                      <span className="text-[9px] font-bold bg-black/30 px-2 py-0.5 rounded backdrop-blur-md self-start">{novel.category}</span>
+                      <span className="font-extrabold text-xs tracking-tight line-clamp-3 leading-snug" style={{ fontFamily: 'Lora, serif' }}>{novel.title}</span>
+                    </div>
+
+                    <div className="flex flex-col justify-between py-1 flex-1 min-w-0">
+                      <div className="space-y-1.5">
+                        <h3 className="font-bold text-sm text-[#0F2C2F] group-hover:text-[#B45309] transition-colors truncate">
+                          {novel.title}
+                        </h3>
+                        <p className="text-[10px] text-[#B45309] font-bold">โดย {novel.author}</p>
+                        <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed font-light">
+                          {novel.synopsis}
+                        </p>
+                      </div>
+
+                      <div className="flex items-center gap-3 text-xs text-slate-400 pt-2 border-t border-slate-50">
+                        <span className="flex items-center gap-0.5 text-[#F59E0B]">
+                          <Star className="w-3.5 h-3.5 fill-current" />
+                          <span className="font-bold">{novel.rating}</span>
+                        </span>
+                        <span>•</span>
+                        <span>{(novel.views || 0).toLocaleString()} ยอดวิว</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* SECTIONS: NEW ARRIVALS */}
+            <div className="space-y-6">
+              <div className="flex justify-between items-center">
+                <h2 className="text-xl font-extrabold text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>วรรณกรรมมาใหม่ล่าสุด</h2>
+                <button onClick={() => { setCurrentView('browse'); setSelectedSort('latest'); }} className="text-xs text-[#B45309] hover:underline font-bold">ดูทั้งหมด</button>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                {visibleNovels.slice(0, 4).map(novel => (
+                  <div 
+                    key={novel.id}
+                    onClick={() => { setSelectedNovelId(novel.id); setCurrentView('detail'); }}
+                    className="bg-white border border-[#B45309]/10 rounded-2xl overflow-hidden shadow-xs hover:shadow-lg hover:border-[#B45309]/40 transition-all cursor-pointer group"
+                  >
+                    <div className={`h-40 bg-gradient-to-br ${novel.coverGradient} p-4 text-white flex flex-col justify-between relative`}>
+                      <span className="text-[8px] font-bold bg-black/20 self-start px-2 py-0.5 rounded">{novel.category}</span>
+                      <h4 className="font-extrabold text-xs line-clamp-3 leading-snug" style={{ fontFamily: 'Lora, serif' }}>{novel.title}</h4>
+                    </div>
+                    <div className="p-4 space-y-1">
+                      <h3 className="font-bold text-xs text-[#0F2C2F] group-hover:text-[#B45309] transition-colors truncate">{novel.title}</h3>
+                      <p className="text-[10px] text-slate-400">ผู้แต่ง: {novel.author}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* ================= VIEW: BROWSE ALL ================= */}
+        {currentView === 'browse' && (
+          <div className="space-y-10 animate-fadeIn">
+            
+            {/* TOP SPOTLIGHT */}
+            <div className="space-y-6">
+              <div className="bg-[#0F2C2F] text-[#FAF6EE] p-6 rounded-3xl border border-[#B45309]/30 relative overflow-hidden">
+                <div className="absolute right-0 bottom-0 translate-y-6 opacity-5">
+                  <Trophy className="w-64 h-64 text-white" />
+                </div>
+                
+                <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
+                  <div className="space-y-1">
+                    <span className="px-2.5 py-0.5 bg-[#B45309] text-[#FAF6EE] text-[9px] font-bold uppercase tracking-widest rounded-full">
+                      Hall of Fame
+                    </span>
+                    <h2 className="text-2xl font-black flex items-center gap-2" style={{ fontFamily: 'Lora, serif' }}>
+                      <Flame className="w-6 h-6 text-[#F59E0B]" /> นิยายยอดฮิตที่มีผู้อ่านสูงสุดในสัปดาห์นี้
+                    </h2>
+                  </div>
+                  <p className="text-xs text-slate-400 font-light">อัปเดตสถิติจริงแบบรายชั่วโมง</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                  {topReadNovels.map((novel, index) => (
+                    <div 
+                      key={novel.id}
+                      onClick={() => { setSelectedNovelId(novel.id); setCurrentView('detail'); }}
+                      className="bg-white/5 border border-white/10 rounded-2xl p-4 flex gap-4 cursor-pointer hover:bg-white/10 transition-all relative overflow-hidden group"
+                    >
+                      <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#B45309] text-white font-black text-xs flex items-center justify-center shadow-md">
+                        {index + 1}
+                      </div>
+
+                      <div className={`w-20 h-28 bg-gradient-to-br ${novel.coverGradient} rounded-xl shadow-md flex-shrink-0 flex flex-col justify-end p-2.5 text-white`}>
+                        <h4 className="font-bold text-[10px] leading-tight line-clamp-3" style={{ fontFamily: 'Lora, serif' }}>{novel.title}</h4>
+                      </div>
+
+                      <div className="flex flex-col justify-between flex-1 py-1 min-w-0">
+                        <div className="space-y-1">
+                          <h3 className="font-bold text-xs text-[#FAF6EE] group-hover:text-[#F59E0B] transition-colors truncate">
+                            {novel.title}
+                          </h3>
+                          <p className="text-[10px] text-[#F59E0B]">โดย {novel.author}</p>
+                          <span className="inline-block px-1.5 py-0.5 bg-white/10 text-white rounded text-[8px]">{novel.category}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 text-[10px] text-slate-300">
+                          <Eye className="w-3.5 h-3.5 text-slate-400" />
+                          <span>{(novel.views || 0).toLocaleString()} ครั้ง</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+              </div>
+            </div>
+
+            {/* CATALOG LISTINGS */}
+            <div className="space-y-6">
+              
+              <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between border-b border-slate-200 pb-4">
+                <div>
+                  <h2 className="text-xl font-bold text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>
+                    สารบัญขุมทรัพย์วรรณศิลป์ทั้งหมด
+                  </h2>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="flex items-center gap-1 bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-600">
+                    <Filter className="w-3.5 h-3.5" />
+                    <select 
+                      value={selectedCategory} 
+                      onChange={(e) => setSelectedCategory(e.target.value)}
+                      className="bg-transparent focus:outline-none cursor-pointer"
+                    >
+                      {CATEGORIES.map(cat => (
+                        <option key={cat} value={cat}>{cat}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="flex items-center bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-600">
+                    <span className="mr-1">เรียงตาม:</span>
+                    <select 
+                      value={selectedSort} 
+                      onChange={(e) => setSelectedSort(e.target.value)}
+                      className="bg-transparent focus:outline-none cursor-pointer font-semibold"
+                    >
+                      <option value="most-views">ยอดเข้าชมสูงสุด</option>
+                      <option value="rating">คะแนนรีวิวสูงสูง</option>
+                      <option value="latest">เรื่องมาใหม่ล่าสุด</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {sortedCatalog.length === 0 ? (
+                <div className="text-center py-16 bg-white rounded-3xl border border-slate-100">
+                  <BookOpen className="w-12 h-12 text-[#B45309]/30 mx-auto mb-3" />
+                  <p className="text-slate-500 text-sm">ไม่พบผลงานนิยายตามเงื่อนไขที่ระบุ</p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {sortedCatalog.map(novel => (
+                    <div 
+                      key={novel.id}
+                      onClick={() => { setSelectedNovelId(novel.id); setCurrentView('detail'); }}
+                      className="bg-white border border-[#B45309]/10 rounded-2xl overflow-hidden hover:shadow-xl hover:border-[#B45309]/30 transition-all cursor-pointer group flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className={`h-44 bg-gradient-to-br ${novel.coverGradient} p-4 text-white flex flex-col justify-between relative`}>
+                          <span className="text-[9px] font-bold bg-black/30 px-2 py-0.5 rounded backdrop-blur-md self-start">{novel.category}</span>
+                          <h4 className="font-extrabold text-xs line-clamp-3 leading-snug" style={{ fontFamily: 'Lora, serif' }}>{novel.title}</h4>
+                        </div>
+                        <div className="p-4 space-y-2">
+                          <h3 className="font-extrabold text-sm text-[#0F2C2F] group-hover:text-[#B45309] transition-colors line-clamp-1">
+                            {novel.title}
+                          </h3>
+                          <p className="text-xs text-slate-500 font-medium">โดย {novel.author}</p>
+                          <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed font-light">{novel.synopsis}</p>
+                        </div>
+                      </div>
+
+                      <div className="p-4 pt-0 flex justify-between items-center text-xs text-slate-400 border-t border-slate-50">
+                        <span className="flex items-center gap-0.5 text-[#F59E0B]">
+                          <Star className="w-3.5 h-3.5 fill-current" />
+                          <span className="font-bold">{novel.rating}</span>
+                        </span>
+                        <span className="text-[11px] font-semibold text-[#0F2C2F]/75">{(novel.views || 0).toLocaleString()} ยอดวิว</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+            </div>
+
+          </div>
+        )}
+
+        {/* ================= VIEW: NOVEL DETAIL ================= */}
+        {currentView === 'detail' && activeNovel && (
+          <div className="max-w-4xl mx-auto space-y-8 animate-fadeIn">
+            
+            <button 
+              onClick={() => setCurrentView('home')}
+              className="inline-flex items-center gap-1.5 text-slate-500 hover:text-[#0F2C2F] text-xs font-bold transition-colors"
+            >
+              <ChevronLeft className="w-4 h-4" /> กลับสู่หน้าแรก
+            </button>
+
+            <div className="bg-white border border-[#B45309]/10 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8">
+              
+              <div className={`w-44 h-60 bg-gradient-to-br ${activeNovel.coverGradient || 'from-[#0F3A40] to-slate-900'} rounded-2xl shadow-xl flex flex-col justify-between p-4 text-white self-center md:self-start flex-shrink-0 relative overflow-hidden`}>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-white/10 rounded-full blur-md"></div>
+                <span className="text-xs font-bold bg-white/20 px-2 py-0.5 rounded backdrop-blur-md self-start">{activeNovel.category}</span>
+                <span className="font-extrabold text-sm tracking-tight leading-snug line-clamp-4" style={{ fontFamily: 'Lora, serif' }}>{activeNovel.title}</span>
+              </div>
+
+              <div className="flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-3">
+                  <span className="px-3 py-1 bg-[#FAF6EE] text-[#B45309] border border-[#B45309]/20 rounded-full text-xs font-semibold">
+                    {activeNovel.category}
+                  </span>
+                  <h1 className="text-3xl font-extrabold text-[#0F2C2F] pt-1" style={{ fontFamily: 'Lora, serif' }}>
+                    {activeNovel.title}
+                  </h1>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-500 font-medium">
+                    <span>ผู้ประพันธ์: <span className="text-[#B45309] font-bold">{activeNovel.author}</span></span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1 text-[#F59E0B]">
+                      <Star className="w-4 h-4 fill-current" />
+                      <strong>{activeNovel.rating}</strong> ({activeNovel.reviewsCount || 0} รีวิว)
+                    </span>
+                    <span>•</span>
+                    <span>เข้าชม: <strong>{(activeNovel.views || 0).toLocaleString()} ครั้ง</strong></span>
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <h3 className="font-extrabold text-sm text-[#0F2C2F]">เรื่องย่อโดยสังเขป</h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                    {activeNovel.synopsis}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3 pt-3">
+                  <button 
+                    onClick={() => {
+                      if (activeNovel?.chapters?.length > 0) {
+                        setSelectedChapterIndex(0);
+                        setCurrentView('reading');
+                      } else {
+                        triggerToast('นิยายเรื่องนี้ยังไม่มีบทความบทถัดไป', 'error');
+                      }
+                    }}
+                    className="px-6 py-3 bg-[#B45309] hover:bg-[#D97706] text-white rounded-xl font-bold text-xs transition-colors shadow-lg flex items-center gap-2"
+                  >
+                    <BookOpen className="w-4 h-4 text-white" /> เริ่มต้นอ่านบทนำ
+                  </button>
+
+                  <button 
+                    onClick={(e) => handleToggleFavorite(activeNovel.id, e)}
+                    className="p-3 bg-[#FAF6EE] hover:bg-[#F59E0B]/10 text-[#B45309] rounded-xl border border-[#B45309]/20 transition-colors"
+                  >
+                    <Heart className={`w-5 h-5 ${activeUser.favorites?.includes(activeNovel.id) ? 'fill-[#B45309] text-[#B45309]' : ''}`} />
+                  </button>
+
+                  <button 
+                    onClick={() => {
+                      triggerToast('คัดลอกลิงก์ไปยังคลิปบอร์ดแล้ว', 'success');
+                    }}
+                    className="p-3 bg-slate-50 hover:bg-slate-100 text-slate-400 rounded-xl border border-slate-200"
+                  >
+                    <Share2 className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Chapters list */}
+            <div className="bg-white border border-[#B45309]/10 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+              <div className="border-b border-slate-100 pb-3">
+                <h2 className="font-extrabold text-lg text-[#0F2C2F] flex items-center gap-2" style={{ fontFamily: 'Lora, serif' }}>
+                  <Layers className="w-5 h-5 text-[#B45309]" /> สารบัญตอนทั้งหมดของวรรณกรรม ({activeNovel?.chapters?.length || 0})
+                </h2>
+              </div>
+
+              <div className="divide-y divide-slate-100">
+                {activeNovel?.chapters?.map((chapter, idx) => {
+                  const isUnlocked = chapter.price === 0 || activeUser.purchasedChapters?.includes(chapter.id);
+                  return (
+                    <div 
+                      key={chapter.id}
+                      className="py-4 flex items-center justify-between hover:bg-[#FAF6EE]/50 px-3 rounded-xl transition-colors"
+                    >
+                      <div 
+                        onClick={() => {
+                          if (isUnlocked) {
+                            setSelectedChapterIndex(idx);
+                            setCurrentView('reading');
+                          } else {
+                            handleUnlockChapter(activeNovel, chapter, idx);
+                          }
+                        }}
+                        className="flex-1 cursor-pointer pr-4"
+                      >
+                        <h4 className="font-bold text-sm text-[#0F2C2F] hover:text-[#B45309] transition-colors">
+                          {chapter.title}
+                        </h4>
+                        <span className="text-[11px] text-slate-400">ขนาดเนื้อหาตอนนิยาย • 1.5K คำโดยประมาณ</span>
+                      </div>
+
+                      <div>
+                        {isUnlocked ? (
+                          <span className="px-3.5 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-full border border-emerald-100">
+                            อ่านฟรี
+                          </span>
+                        ) : (
+                          <button 
+                            onClick={() => handleUnlockChapter(activeNovel, chapter, idx)}
+                            className="px-4 py-2 bg-gradient-to-r from-[#B45309] to-[#F59E0B] hover:from-[#D97706] text-white rounded-full text-xs font-extrabold flex items-center gap-1.5 shadow-sm transition-all"
+                          >
+                            <Coins className="w-4 h-4 text-[#FAF6EE]" /> 
+                            <span>ปลดล็อกด้วย {chapter.price} คอยน์</span>
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* ================= VIEW: READER MODE ================= */}
+        {currentView === 'reading' && activeNovel && (
+          <div className="max-w-3xl mx-auto space-y-6 animate-fadeIn pb-24">
+            
+            <div className="bg-white border border-[#B45309]/10 rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4">
+              <button 
+                onClick={() => setCurrentView('detail')}
+                className="text-slate-500 hover:text-[#0F2C2F] text-xs font-bold flex items-center gap-1.5"
+              >
+                <ChevronLeft className="w-4 h-4" /> แผงสารบัญนิยาย
+              </button>
+
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-1.5">
+                  <button 
+                    onClick={() => setReadingTheme('white')}
+                    className={`w-6 h-6 rounded-full border ${readingTheme === 'white' ? 'ring-2 ring-[#B45309]' : 'border-slate-300'} bg-white`}
+                  ></button>
+                  <button 
+                    onClick={() => setReadingTheme('cream')}
+                    className={`w-6 h-6 rounded-full border ${readingTheme === 'cream' ? 'ring-2 ring-[#B45309]' : 'border-amber-300'} bg-[#FDF8F0]`}
+                  ></button>
+                  <button 
+                    onClick={() => setReadingTheme('dark')}
+                    className={`w-6 h-6 rounded-full border ${readingTheme === 'dark' ? 'ring-2 ring-[#B45309]' : 'border-slate-800'} bg-slate-900`}
+                  ></button>
+                </div>
+
+                <div className="flex items-center border border-slate-200 rounded-lg overflow-hidden text-xs">
+                  <button 
+                    onClick={() => setReadingFontSize(Math.max(14, readingFontSize - 2))}
+                    className="px-3 py-1 bg-slate-50 hover:bg-slate-100 font-black text-slate-700 border-r border-slate-200"
+                  >
+                    ก-
+                  </button>
+                  <span className="px-3 py-1 text-xs font-bold text-slate-800 bg-white">
+                    {readingFontSize}px
+                  </span>
+                  <button 
+                    onClick={() => setReadingFontSize(Math.min(26, readingFontSize + 2))}
+                    className="px-3 py-1 bg-slate-50 hover:bg-slate-100 font-black text-slate-700 border-l border-slate-200"
+                  >
+                    ก+
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div 
+              className={`rounded-3xl p-6 sm:p-12 shadow-sm border border-[#B45309]/10 transition-all ${readingTheme === 'white' ? 'bg-white text-slate-800' : readingTheme === 'cream' ? 'bg-[#FDF8F0] text-amber-950' : 'bg-slate-950 text-slate-200 border-none'}`}
+            >
+              <div className="text-center space-y-2 border-b border-slate-100 pb-6 mb-8">
+                <span className="text-xs uppercase tracking-wider font-bold text-[#B45309]">
+                  {activeNovel.title}
+                </span>
+                <h1 className="text-2xl sm:text-3xl font-black mt-2" style={{ fontFamily: 'Lora, serif' }}>
+                  {currentChapter?.title || "ตอนไม่มีชื่อ"}
+                </h1>
+                <p className="text-xs text-slate-400">บทประพันธ์โดย {activeNovel.author}</p>
+              </div>
+
+              <div 
+                style={{ fontSize: `${readingFontSize}px`, fontFamily: 'Lora, Prompt, serif' }}
+                className="leading-loose text-justify whitespace-pre-wrap space-y-6 font-light"
+              >
+                {currentChapter?.content || "ไม่พบสารบัญเนื้อหาบทเขียนในคลังระบบ"}
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* ================= VIEW: WRITING STUDIO ================= */}
+        {currentView === 'studio' && (
+          <div className="max-w-6xl mx-auto space-y-8 animate-fadeIn">
+            
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-200 pb-5">
+              <div>
+                <span className="text-xs text-[#B45309] font-black uppercase tracking-wider font-bold">Aureate Writing Studio</span>
+                <h1 className="text-2xl font-black text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>
+                  เขียนและจัดการตอนนิยายส่วนตัว
+                </h1>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <button 
+                  onClick={() => setCurrentView('author-dashboard')}
+                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold text-xs transition-all"
+                >
+                  กลับแผงควบคุม
+                </button>
+                <button 
+                  onClick={() => handlePublishNewChapter(writingNovelId)}
+                  className="px-5 py-2 bg-[#B45309] hover:bg-[#D97706] text-white rounded-xl font-bold text-xs transition-colors shadow-lg"
+                >
+                  บันทึกและเผยแพร่ตอนใหม่
+                </button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+              
+              <div className="lg:col-span-3 bg-white border border-[#B45309]/10 rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="sm:col-span-2 space-y-1.5">
+                    <label className="text-xs font-bold text-slate-600">ชื่อบทตอนนิยาย</label>
+                    <input 
+                      type="text" 
+                      value={chapterForm.title}
+                      onChange={(e) => setChapterForm({ ...chapterForm, title: e.target.value })}
+                      placeholder="บทที่ 4: คืนวสันต์ใต้ร่มจันทร์เสี้ยว"
+                      className="w-full border border-slate-200 rounded-xl p-2.5 text-xs focus:ring-2 focus:ring-[#B45309] focus:outline-none"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-600 flex items-center gap-1">
+                      <Coins className="w-3.5 h-3.5 text-amber-500" /> ราคาตั้งขาย (คอยน์ทอง)
+                    </label>
+                    <input 
+                      type="number" 
+                      min={0}
+                      value={chapterForm.price}
+                      onChange={(e) => setChapterForm({ ...chapterForm, price: Number(e.target.value) || 0 })}
+                      className="w-full border border-slate-200 rounded-xl p-2.5 text-xs focus:ring-2 focus:ring-[#B45309] focus:outline-none text-slate-800"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-slate-600">เนื้องานบทประพันธ์</label>
+                  <textarea 
+                    rows={12}
+                    value={chapterForm.content}
+                    onChange={(e) => setChapterForm({ ...chapterForm, content: e.target.value })}
+                    style={{ fontFamily: 'Lora, serif' }}
+                    placeholder="จรดปลายอักษรและถ่ายทอดวิญญาณแห่งวรรณกรรมลงบนแพลตฟอร์มพรีเมียม..."
+                    className="w-full border border-slate-200 rounded-3xl p-4 text-sm leading-loose focus:ring-2 focus:ring-[#B45309] focus:outline-none bg-[#FDF8F0]"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="space-y-6 text-xs">
+                <div className="bg-[#FAF6EE] border border-[#B45309]/15 rounded-2xl p-5 space-y-3">
+                  <h3 className="font-extrabold text-[#0F2C2F] flex items-center gap-1.5">
+                    <Edit3 className="w-4 h-4 text-[#B45309]" /> โน้ตย่อ/เค้าโครงเรื่อง
+                  </h3>
+                  <textarea 
+                    rows={6}
+                    value={storyNotes}
+                    onChange={(e) => setStoryNotes(e.target.value)}
+                    placeholder="บันทึกช่วยจำตัวละคร ปมปริศนาที่จะพัฒนาต่อ..."
+                    className="w-full p-2.5 border border-slate-200 rounded-xl focus:outline-none bg-white leading-relaxed text-slate-600 font-light"
+                  ></textarea>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        )}
+
+        {/* ================= VIEW: AUTHOR DASHBOARD ================= */}
+        {currentView === 'author-dashboard' && (
+          <div className="max-w-5xl mx-auto space-y-8 animate-fadeIn">
+            
+            <div className="bg-white border border-[#B45309]/10 rounded-3xl p-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#0F2C2F] to-[#115E59] text-white flex items-center justify-center font-bold text-lg shadow-md">
+                  <User className="w-7 h-7 text-[#FAF6EE]" />
+                </div>
+                <div>
+                  <h1 className="font-extrabold text-xl text-[#0F2C2F] flex items-center gap-2" style={{ fontFamily: 'Lora, serif' }}>
+                    {activeUser.authorName || activeUser.username} <span className="text-xs px-2.5 py-0.5 bg-amber-100 text-[#B45309] rounded-full font-bold">สตูดิโอนักเขียนผ่านเกณฑ์</span>
+                  </h1>
+                  <p className="text-xs text-slate-400 mt-1">จัดการผลงาน ตรวจสอบสถิติรายได้ และเพิ่มจำนวนผู้ชื่นชอบผลงาน</p>
+                </div>
+              </div>
+
+              {/* DIRECT NEW NOVEL OPENER MODAL BUTTON */}
+              <div className="relative group">
+                <button 
+                  onClick={() => {
+                    const title = prompt('กรุณากรอกชื่อนิยายเรื่องใหม่ของคุณ:');
+                    if (!title) return;
+                    const syn = prompt('กรอกเรื่องย่อโดยสังเขป:');
+                    
+                    const newNovelObj = {
+                      id: `n-${Date.now()}`,
+                      title,
+                      author: activeUser.authorName || activeUser.username,
+                      authorEmail: activeUser.email,
+                      category: 'จีนกำลังภายใน',
+                      coverGradient: 'from-[#0F3A40] via-[#1E5E65] to-[#B45309]',
+                      synopsis: syn || 'ไม่มีเรื่องย่อของบทความ',
+                      rating: 5.0,
+                      reviewsCount: 0,
+                      views: 0,
+                      favorites: 0,
+                      isBanned: false,
+                      chapters: []
+                    };
+                    setNovels(prev => [newNovelObj, ...prev]);
+                    triggerToast(`เปิดเรื่องนิยาย "${title}" เรียบร้อยแล้ว! เริ่มเพิ่มตอนเขียนได้เลย`, 'success');
+                  }}
+                  className="px-5 py-2.5 bg-gradient-to-r from-[#B45309] to-[#F59E0B] hover:from-[#D97706] text-white font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-md transition-all"
+                >
+                  <PlusCircle className="w-4 h-4" /> เปิดเรื่องนิยายใหม่
+                </button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+              
+              <div className="space-y-6">
+                
+                <div className="bg-white border border-[#B45309]/10 rounded-2xl p-5 space-y-4 shadow-xs text-center">
+                  <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest">ส่วนแบ่งรายได้สะสมคงเหลือ (70%)</span>
+                  <div className="py-2">
+                    <h3 className="text-2xl font-black text-[#B45309] flex items-center justify-center gap-1">
+                      <Coins className="w-6 h-6 text-amber-500" /> {activeUser.earningsCoins || 0} คอยน์
+                    </h3>
+                    <p className="text-xs text-slate-400 mt-1">มูลค่าคำนวณจริง: ฿{((activeUser.earningsCoins || 0) * systemConfig.coinExchangeRate).toLocaleString()} บาท</p>
+                  </div>
+
+                  <button 
+                    onClick={handleWithdrawalRequest}
+                    className="w-full py-2 bg-[#0F2C2F] hover:bg-[#115E59] text-white rounded-xl font-bold text-xs transition-colors"
+                  >
+                    ส่งคำขอรับเงินโอน
+                  </button>
+                </div>
+
+                <div className="bg-white border border-[#B45309]/10 rounded-2xl p-5 text-xs text-slate-600 space-y-3 shadow-xs">
+                  <h4 className="font-bold text-[#0F2C2F] uppercase tracking-wider flex items-center gap-1.5">
+                    <Settings className="w-4 h-4 text-[#B45309]" /> บัญชีโอนส่วนแบ่ง
+                  </h4>
+                  <div className="space-y-2 border-t border-slate-50 pt-2 font-medium">
+                    <p className="flex justify-between">
+                      <span className="text-slate-400">ธนาคาร:</span>
+                      <span className="text-slate-800">{activeUser.withdrawBank || 'ไม่ได้ระบุ'}</span>
+                    </p>
+                    <p className="flex justify-between">
+                      <span className="text-slate-400">เลขที่บัญชี:</span>
+                      <span className="text-slate-800">{activeUser.withdrawAccount || 'ไม่ได้ระบุ'}</span>
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* My novels display (computed safely from visible master state database) */}
+              <div className="lg:col-span-3 space-y-6">
+                <h2 className="font-bold text-base text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>
+                  ลิขิตผลงานแต่งของฉันในคลังระบบ ({novels.filter(n => n.authorEmail === activeUser.email || n.author === activeUser.authorName).length})
+                </h2>
+
+                <div className="grid grid-cols-1 gap-4 animate-fadeIn">
+                  {novels.filter(n => n.authorEmail === activeUser.email || n.author === activeUser.authorName).map(novel => (
+                    <div 
+                      key={novel.id}
+                      className="bg-white border border-[#B45309]/10 rounded-2xl p-4 flex gap-4 shadow-xs"
+                    >
+                      <div className={`w-20 h-28 bg-gradient-to-br ${novel.coverGradient} rounded-xl text-white p-2 flex flex-col justify-end`}>
+                        <h4 className="font-bold text-[9px] line-clamp-3 leading-snug" style={{ fontFamily: 'Lora, serif' }}>{novel.title}</h4>
+                      </div>
+
+                      <div className="flex-1 flex flex-col justify-between min-w-0 py-1">
+                        <div>
+                          <h3 className="font-extrabold text-sm text-[#0F2C2F] truncate">{novel.title}</h3>
+                          <p className="text-xs text-slate-400 mt-1">{novel.category} • บทความรวมทั้งหมด {novel.chapters?.length || 0} ตอนเผยแพร่</p>
+                        </div>
+
+                        <div className="flex gap-2">
+                          <button 
+                            onClick={() => {
+                              setWritingNovelId(novel.id);
+                              setChapterForm({ title: '', content: '', price: 3 });
+                              setCurrentView('studio');
+                            }}
+                            className="px-3.5 py-1.5 bg-[#FAF6EE] text-[#B45309] rounded-lg text-xs font-bold border border-[#B45309]/20 hover:bg-[#B45309]/5"
+                          >
+                            เปิดสตูดิโอแต่งเนื้อหาเพิ่ม
+                          </button>
+                          <button 
+                            onClick={() => {
+                              setSelectedNovelId(novel.id);
+                              setCurrentView('detail');
+                            }}
+                            className="px-3.5 py-1.5 bg-white text-slate-500 rounded-lg text-xs font-medium border border-slate-200"
+                          >
+                            หน้ารายละเอียด
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        )}
+
+        {/* ================= VIEW: WALLET ================= */}
+        {currentView === 'wallet' && (
+          <div className="max-w-3xl mx-auto space-y-8 animate-fadeIn">
+            
+            <div className="text-center space-y-2">
+              <div className="w-14 h-14 bg-gradient-to-tr from-[#B45309] to-[#F59E0B] rounded-full flex items-center justify-center text-[#FAF6EE] mx-auto shadow-md">
+                <Coins className="w-8 h-8" />
+              </div>
+              <h1 className="text-2xl font-black text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>
+                เติมเหรียญทองเสพสุนทรีย์แห่งวรรณศิลป์
+              </h1>
+              <p className="text-xs text-slate-500">สนับสนุนนักเขียนที่คุณชื่นชอบโดยตรง ยอดแบ่งส่วนแบ่งรายได้ถึง 70% ให้ผู้แต่งนิยายทันทีแบบเรียลไทม์</p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {COIN_PACKAGES.map(pkg => (
+                <div 
+                  key={pkg.id}
+                  className="bg-white border-2 border-slate-100 hover:border-[#B45309] rounded-2xl p-5 flex flex-col justify-between text-center relative group transition-all cursor-pointer"
+                >
+                  {pkg.tag && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-2.5 py-0.5 bg-[#B45309] text-white text-[9px] font-black tracking-widest uppercase rounded-full">
+                      {pkg.tag}
+                    </span>
+                  )}
+
+                  <div className="py-4 space-y-1">
+                    <h3 className="text-2xl font-black text-[#B45309]">{pkg.coins} คอยน์</h3>
+                    {pkg.bonus > 0 && (
+                      <p className="text-[10px] text-emerald-600 font-bold bg-emerald-50 py-1 rounded-lg">แถมฟรีอีก +{pkg.bonus} โบนัส</p>
+                    )}
+                  </div>
+
+                  <button 
+                    onClick={() => handleTopUpCoins(pkg)}
+                    className="w-full py-2.5 bg-[#0F2C2F] hover:bg-[#115E59] group-hover:bg-[#B45309] text-[#FAF6EE] font-bold text-xs rounded-xl transition-all"
+                  >
+                    ฿{pkg.price} THB
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-white border border-[#B45309]/10 rounded-3xl p-6 shadow-sm space-y-4">
+              <h3 className="font-bold text-xs text-slate-400 uppercase tracking-wider">ช่องทางการชำระเงินที่ระบบรองรับ (โหมดสาธิตแบบจำลอง)</h3>
+              <div className="grid grid-cols-3 gap-3 text-center text-xs font-semibold text-slate-600">
+                <div className="p-4 bg-[#FAF6EE] border border-slate-100 rounded-2xl">
+                  <span>QR Code PromptPay</span>
+                </div>
+                <div className="p-4 bg-[#FAF6EE] border border-slate-100 rounded-2xl">
+                  <span>บัตรเดบิต / เครดิต</span>
+                </div>
+                <div className="p-4 bg-[#FAF6EE] border border-slate-100 rounded-2xl">
+                  <span>Mobile E-Wallet</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* ================= VIEW: VERIFY AUTHOR ================= */}
+        {currentView === 'verify-author' && (
+          <div className="max-w-md mx-auto bg-white border border-[#B45309]/15 rounded-3xl p-6 shadow-md text-center space-y-6">
+            <div className="w-12 h-12 bg-[#FAF6EE] text-[#B45309] rounded-full flex items-center justify-center mx-auto border border-[#B45309]/10">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+
+            <div className="space-y-1">
+              <h2 className="font-extrabold text-lg text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>สมัครส่งเอกสารตั้งนามปากกา</h2>
+              <p className="text-xs text-slate-500 font-light font-medium">เมื่ออนุมัติคุณจะได้รับส่วนแบ่งรายได้ {100 - systemConfig.commissionRate}% จากระบบ Ink & Gold ทันที</p>
+            </div>
+
+            <form onSubmit={handleAuthorVerificationSubmit} className="space-y-4 text-left text-xs font-semibold">
+              
+              <div className="space-y-1.5">
+                <label className="text-slate-600">กำหนดนามปากกาประดับวรรณกรรม</label>
+                <input 
+                  type="text"
+                  required
+                  value={verifyForm.penName}
+                  onChange={(e) => setVerifyForm({ ...verifyForm, penName: e.target.value })}
+                  placeholder="เช่น รัญชนา, ศิรากานต์..."
+                  className="w-full border p-2.5 rounded-xl bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#B45309]"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-slate-600">ธนาคารรับสิทธิ์โอนส่วนแบ่ง</label>
+                <select 
+                  value={verifyForm.bank}
+                  onChange={(e) => setVerifyForm({ ...verifyForm, bank: e.target.value })}
+                  className="w-full border p-2.5 rounded-xl bg-white focus:outline-none text-slate-800 font-semibold"
+                >
+                  <option value="กสิกรไทย">กสิกรไทย (KBANK)</option>
+                  <option value="ไทยพาณิชย์">ไทยพาณิชย์ (SCB)</option>
+                  <option value="กรุงเทพ">กรุงเทพ (BBL)</option>
+                </select>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-slate-600">เลขที่บัญชีรับเงินสะสม</label>
+                <input 
+                  type="text"
+                  required
+                  value={verifyForm.account}
+                  onChange={(e) => setVerifyForm({ ...verifyForm, account: e.target.value })}
+                  placeholder="098-x-xxxxx-2"
+                  className="w-full border p-2.5 rounded-xl bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#B45309]"
+                />
+              </div>
+
+              <button 
+                type="submit"
+                className="w-full py-3 bg-[#B45309] hover:bg-[#D97706] text-white font-bold rounded-xl shadow-lg transition-colors text-xs"
+              >
+                ยืนยันการตั้งบัญชีผู้แต่งวรรณกรรม
+              </button>
+            </form>
+          </div>
+        )}
+
+        {/* ================= VIEW: ADMIN CONTROL PANEL ================= */}
+        {currentView === 'admin-dashboard' && isUserAdmin && (
+          <div className="space-y-8 animate-fadeIn">
+            
+            <div className="bg-slate-900 text-white rounded-3xl p-6 shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border border-red-900/20">
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-red-600 rounded-2xl">
+                  <ShieldAlert className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-black" style={{ fontFamily: 'Lora, serif' }}>ผู้ดูแลระบบสยามวรรณกรรม (Admin Dashboard)</h1>
+                  <p className="text-xs text-slate-400">ควบคุม ตรวจสอบ และเชื่อมโยงทุกฟังก์ชันการถอนเงินสะสมและแบนนิยาย</p>
+                </div>
+              </div>
+
+              <div className="text-right text-xs">
+                <span className="text-slate-400">รายได้แพลตฟอร์มสะสม ({systemConfig.commissionRate}%)</span>
+                <p className="text-2xl font-black text-[#F59E0B]">
+                  ฿{(platformStats.totalSystemCoinsEarned * systemConfig.coinExchangeRate).toLocaleString()} บาท
                 </p>
-<div class="flex gap-4">
-<!-- Placeholder social icons -->
-<span class="material-symbols-outlined text-primary-fixed-dim opacity-80 hover:opacity-100 cursor-pointer transition-opacity">language</span>
-<span class="material-symbols-outlined text-primary-fixed-dim opacity-80 hover:opacity-100 cursor-pointer transition-opacity">share</span>
-</div>
-</div>
-</div>
-</footer>
-</body></html>
+                <p className="text-[10px] text-slate-500">ปริมาณคอยน์หมุนเวียน {platformStats.totalSystemCoinsEarned.toLocaleString()} คอยน์</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+              
+              {/* Admin Menu Sidebar */}
+              <div className="bg-white border border-[#B45309]/10 rounded-3xl p-4 h-fit space-y-1">
+                <button 
+                  onClick={() => setAdminTab('overview')}
+                  className={`w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${adminTab === 'overview' ? 'bg-red-50 text-red-600' : 'text-slate-600 hover:bg-slate-50'}`}
+                >
+                  <Trophy className="w-4 h-4" /> แดชบอร์ดวิเคราะห์ยอดขาย
+                </button>
+                <button 
+                  onClick={() => setAdminTab('verification')}
+                  className={`w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-between ${adminTab === 'verification' ? 'bg-red-50 text-red-600' : 'text-slate-600 hover:bg-slate-50'}`}
+                >
+                  <span>ยืนยันสิทธิ์ผู้เขียนใหม่</span>
+                  <span className="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full">{pendingAuthors.length}</span>
+                </button>
+                <button 
+                  onClick={() => setAdminTab('withdrawals')}
+                  className={`w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-between ${adminTab === 'withdrawals' ? 'bg-red-50 text-red-600' : 'text-slate-600 hover:bg-slate-50'}`}
+                >
+                  <span>อนุมัติการถอนเงินสะสม</span>
+                  <span className="bg-amber-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full">{pendingWithdrawals.length}</span>
+                </button>
+                <button 
+                  onClick={() => setAdminTab('moderation')}
+                  className={`w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${adminTab === 'moderation' ? 'bg-red-50 text-red-600' : 'text-slate-600 hover:bg-slate-50'}`}
+                >
+                  <ShieldCheck className="w-4 h-4" /> แบนหรือระงับนิยายผิดกฎ
+                </button>
+                <button 
+                  onClick={() => setAdminTab('user-db')}
+                  className={`w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${adminTab === 'user-db' ? 'bg-red-50 text-red-600' : 'text-slate-600 hover:bg-slate-50'}`}
+                >
+                  <Database className="w-4 h-4" /> ฐานข้อมูลผู้ใช้ & เหรียญทอง
+                </button>
+                <button 
+                  onClick={() => setAdminTab('settings')}
+                  className={`w-full text-left px-4 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${adminTab === 'settings' ? 'bg-red-50 text-red-600' : 'text-slate-600 hover:bg-slate-50'}`}
+                >
+                  <Settings className="w-4 h-4" /> ปรับแต่งกฎ & สื่อกิจกรรมหน้าแรก
+                </button>
+              </div>
+
+              {/* Dynamic admin workspace tabs */}
+              <div className="lg:col-span-3 space-y-6">
+                
+                {/* ADMIN TABS: OVERVIEW */}
+                {adminTab === 'overview' && (
+                  <div className="space-y-6 animate-fadeIn">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      
+                      <div className="bg-white border border-[#B45309]/10 rounded-2xl p-5 shadow-xs">
+                        <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest">ยอดขายจำหน่ายเหรียญรวม</span>
+                        <h3 className="text-2xl font-black text-[#0F2C2F] mt-1">
+                          ฿{(platformStats.totalSalesVolumeCoins * systemConfig.coinExchangeRate).toLocaleString()} บาท
+                        </h3>
+                        <p className="text-[9px] text-[#B45309] font-bold">ปริมาณคอยน์หมุนเวียน {platformStats.totalSalesVolumeCoins.toLocaleString()} Coins</p>
+                      </div>
+
+                      <div className="bg-white border border-[#B45309]/10 rounded-2xl p-5 shadow-xs">
+                        <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest">จำนวนนักแต่งนิยายในระบบ</span>
+                        <h3 className="text-2xl font-black text-[#0F2C2F] mt-1">
+                          {usersList.filter(u => u.isVerifiedAuthor).length} บัญชี
+                        </h3>
+                        <p className="text-[9px] text-slate-400">รออนุมัติเพิ่มเติม {pendingAuthors.length} รายการ</p>
+                      </div>
+
+                      <div className="bg-white border border-[#B45309]/10 rounded-2xl p-5 shadow-xs">
+                        <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest">นิยายที่เปิดเผยอยู่</span>
+                        <h3 className="text-2xl font-black text-[#0F2C2F] mt-1">
+                          {novels.filter(n => !n.isBanned).length} เรื่อง
+                        </h3>
+                        <p className="text-[9px] text-red-500 font-bold">ถูกปิดกั้นชั่วคราว {novels.filter(n => n.isBanned).length} เรื่อง</p>
+                      </div>
+
+                    </div>
+
+                    <div className="bg-gradient-to-r from-red-500 to-[#B45309] text-white rounded-2xl p-5 space-y-2">
+                      <h4 className="font-extrabold text-sm flex items-center gap-1.5">
+                        <AlertCircle className="w-5 h-5" /> การดำเนินการที่เชื่อมโยงทางการเงิน
+                      </h4>
+                      <p className="text-xs text-red-50 leading-relaxed font-light">
+                        ในฐานะผู้ดูแลสูงสุด การปรับโครงสร้างการคำนวณเงินสด ยอดถอนขั้นต่ำ หรือสัดส่วนค่าธรรมเนียมจะถูกเชื่อมต่อเข้าสู่ยอดรายรับและหน้าจอประมวลผลของสมาชิกนักเขียนวรรณศิลป์ทุกคนทันทีแบบเรียลไทม์
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* ADMIN TABS: VERIFICATION */}
+                {adminTab === 'verification' && (
+                  <div className="space-y-4 animate-fadeIn">
+                    <h2 className="font-bold text-base text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>คำขอตรวจสอบหลักฐานเพื่อยืนยันตนผู้เขียน ({pendingAuthors.length})</h2>
+                    
+                    {pendingAuthors.length === 0 ? (
+                      <div className="p-6 bg-white border border-slate-100 rounded-2xl text-center text-slate-400 text-xs">
+                        ไม่มีคำขอแต่งนิยายใหม่ที่รอดำเนินการค้างคา
+                      </div>
+                    ) : (
+                      pendingAuthors.map(req => (
+                        <div key={req.id} className="bg-white border border-[#B45309]/10 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                          <div className="space-y-1 text-xs">
+                            <span className="text-[10px] text-slate-400">{req.date} • สมัครโดย {req.username}</span>
+                            <h3 className="font-extrabold text-sm text-[#0F2C2F]">เสนอนามปากกาใหม่: <span className="text-[#B45309]">{req.penName}</span></h3>
+                            <p className="text-[10px] text-slate-400">ภาพหลักฐานจำลอง: <span className="underline text-blue-500">{req.documentUrl}</span></p>
+                          </div>
+
+                          <div className="flex gap-2">
+                            <button 
+                              onClick={() => handleApproveAuthorByAdmin(req)}
+                              className="px-4 py-2 bg-[#B45309] hover:bg-[#D97706] text-white font-bold text-xs rounded-xl flex items-center gap-1"
+                            >
+                              <Check className="w-3.5 h-3.5" /> อนุมัติผ่านสิทธิ์
+                            </button>
+                            <button 
+                              onClick={() => {
+                                setPendingAuthors(prev => prev.filter(p => p.id !== req.id));
+                                triggerToast('ปฏิเสธคำร้องส่งกลับผู้เขียน', 'error');
+                              }}
+                              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl"
+                            >
+                              ปฏิเสธ
+                            </button>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                )}
+
+                {/* ADMIN TABS: WITHDRAWALS */}
+                {adminTab === 'withdrawals' && (
+                  <div className="space-y-4 animate-fadeIn">
+                    <h2 className="font-bold text-base text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>อนุมัติคำขอถอนส่วนแบ่งของนักแต่ง ({pendingWithdrawals.length})</h2>
+
+                    {pendingWithdrawals.length === 0 ? (
+                      <div className="p-6 bg-white border border-slate-100 rounded-2xl text-center text-slate-400 text-xs">
+                        ไม่มีคำร้องขอเบิกจ่ายโอนเงินในระบบ
+                      </div>
+                    ) : (
+                      pendingWithdrawals.map(req => (
+                        <div key={req.id} className="bg-white border border-[#B45309]/10 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                          <div className="space-y-1.5 text-xs">
+                            <span className="bg-amber-100 text-[#B45309] font-black px-2 py-0.5 rounded-full">{req.coins} คอยน์</span>
+                            <h3 className="font-extrabold text-sm text-[#0F2C2F] mt-1">ผู้เบิกโอน: {req.authorName} ({req.email})</h3>
+                            <p className="text-slate-500">บัญชีธนาคารรับเงิน: <strong>{req.bank}</strong> • เลขบัญชี {req.account}</p>
+                          </div>
+
+                          <div className="flex items-center gap-3">
+                            <div className="text-right text-xs">
+                              <span className="text-slate-400">ยอดที่ต้องโอนจริง:</span>
+                              <p className="text-base font-black text-emerald-600">฿{req.cash} บาท</p>
+                            </div>
+
+                            <button 
+                              onClick={() => handleApproveWithdrawalByAdmin(req)}
+                              className="px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 text-white font-bold text-xs rounded-xl"
+                            >
+                              อนุมัติการโอน
+                            </button>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                )}
+
+                {/* ADMIN TABS: MODERATION */}
+                {adminTab === 'moderation' && (
+                  <div className="space-y-4 animate-fadeIn">
+                    <h2 className="font-bold text-base text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>ตรวจสอบระงับการเปิดเผยและแบนนิยาย</h2>
+
+                    <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-xs">
+                      <table className="w-full text-left text-xs text-slate-600">
+                        <thead className="bg-[#FAF6EE] text-[10px] font-black text-slate-500 border-b border-slate-100 uppercase tracking-wider">
+                          <tr>
+                            <th className="p-3">เรื่องนิยาย</th>
+                            <th className="p-3">ผู้ประพันธ์</th>
+                            <th className="p-3">หมวดหมู่</th>
+                            <th className="p-3 text-center">นิยายแนะนำ</th>
+                            <th className="p-3 text-right">ดำเนินการปิดกั้น</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-50">
+                          {novels.map(novel => (
+                            <tr key={novel.id} className="hover:bg-slate-50/50">
+                              <td className="p-3 font-bold text-[#0F2C2F]">{novel.title}</td>
+                              <td className="p-3">{novel.author}</td>
+                              <td className="p-3 text-[#B45309] font-medium">{novel.category}</td>
+                              <td className="p-3 text-center">
+                                <button 
+                                  onClick={() => {
+                                    const updated = novels.map(n => n.id === novel.id ? { ...n, isRecommended: !n.isRecommended } : n);
+                                    setNovels(updated);
+                                    triggerToast('อัปเดตสิทธิ์นิยายแนะนำหน้าแรกเรียบร้อย', 'success');
+                                  }}
+                                  className={`px-2.5 py-1 text-[9px] font-bold rounded-full ${novel.isRecommended ? 'bg-amber-100 text-[#B45309]' : 'bg-slate-100 text-slate-400'}`}
+                                >
+                                  {novel.isRecommended ? 'ปักหมุดแนะนำอยู่' : 'ทั่วไป'}
+                                </button>
+                              </td>
+                              <td className="p-3 text-right">
+                                <button 
+                                  onClick={() => {
+                                    const updated = novels.map(n => n.id === novel.id ? { ...n, isBanned: !n.isBanned } : n);
+                                    setNovels(updated);
+                                    triggerToast(novel.isBanned ? 'กู้คืนบทนิยายเรียบร้อย' : 'สั่งบล็อกซ่อนนิยายสำเร็จ', 'success');
+                                  }}
+                                  className={`px-3 py-1 rounded-lg text-[10px] font-bold transition-all ${novel.isBanned ? 'bg-red-600 text-white' : 'bg-slate-100 text-red-500 hover:bg-red-50'}`}
+                                >
+                                  {novel.isBanned ? 'ยกเลิกแบน' : 'ระงับเผยแพร่'}
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* ADMIN TABS: USER DATABASE */}
+                {adminTab === 'user-db' && (
+                  <div className="space-y-4 animate-fadeIn">
+                    <h2 className="font-bold text-base text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>ฐานข้อมูลบัญชีผู้ใช้ระบบ & แปรรูปยอดคอยน์</h2>
+
+                    <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-xs">
+                      <table className="w-full text-left text-xs text-slate-600">
+                        <thead className="bg-[#FAF6EE] text-[10px] font-black text-slate-500 border-b border-slate-100 uppercase tracking-wider">
+                          <tr>
+                            <th className="p-3">ข้อมูลบัญชี / อีเมล</th>
+                            <th className="p-3">บทบาทระบบ</th>
+                            <th className="p-3 text-center">เหรียญทอง (Coins)</th>
+                            <th className="p-3 text-center">รายได้รอเบิก (Author)</th>
+                            <th className="p-3 text-right">สิทธิ์ความปลอดภัย</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-50">
+                          {usersList.map(u => (
+                            <tr key={u.email} className={`hover:bg-slate-50/50 ${u.isBanned ? 'bg-red-50' : ''}`}>
+                              <td className="p-3">
+                                <p className="font-bold text-[#0F2C2F]">{u.username}</p>
+                                <span className="text-[10px] text-slate-400">{u.email}</span>
+                              </td>
+                              <td className="p-3 uppercase">
+                                <span className={`px-2 py-0.5 text-[9px] font-bold rounded-full ${u.role === 'admin' ? 'bg-red-100 text-red-600' : u.role === 'author' ? 'bg-amber-100 text-[#B45309]' : 'bg-slate-100 text-slate-500'}`}>
+                                  {u.role}
+                                </span>
+                              </td>
+                              <td className="p-3 text-center font-bold text-slate-800">{u.coins}</td>
+                              <td className="p-3 text-center text-emerald-600 font-bold">{u.earningsCoins || 0}</td>
+                              <td className="p-3 text-right">
+                                <button 
+                                  onClick={() => {
+                                    setEditingUser({ ...u });
+                                    setShowEditUserModal(true);
+                                  }}
+                                  className="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-lg font-bold text-[10px]"
+                                >
+                                  จัดการสิทธิ์
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* ADMIN TABS: SETTINGS */}
+                {adminTab === 'settings' && (
+                  <div className="bg-white border border-[#B45309]/10 rounded-3xl p-6 space-y-8 shadow-sm text-xs font-semibold">
+                    
+                    <div className="space-y-4">
+                      <h3 className="text-sm font-extrabold text-[#0F2C2F] border-b border-slate-100 pb-2">1. นโยบายการเงินของสมาคม</h3>
+                      
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className="space-y-1.5">
+                          <label>อัตราสัดส่วนแบ่งสมาคมเว็บไซต์ (%)</label>
+                          <input 
+                            type="number" 
+                            min={0}
+                            max={100}
+                            value={systemConfig.commissionRate}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, commissionRate: Number(e.target.value) || 0 })}
+                            className="w-full border border-slate-200 rounded-xl p-2.5 bg-[#FAF6EE]/50 text-slate-800 focus:outline-none"
+                          />
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label>มูลค่าคอยน์ทอง (บาท / คอยน์)</label>
+                          <input 
+                            type="number" 
+                            step="0.1"
+                            value={systemConfig.coinExchangeRate}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, coinExchangeRate: Number(e.target.value) || 0.5 })}
+                            className="w-full border border-slate-200 rounded-xl p-2.5 bg-[#FAF6EE]/50 text-slate-800 focus:outline-none"
+                          />
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label>ยอดขั้นต่ำในการถอนสะสม</label>
+                          <input 
+                            type="number" 
+                            value={systemConfig.withdrawMinCoins}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, withdrawMinCoins: Number(e.target.value) || 100 })}
+                            className="w-full border border-slate-200 rounded-xl p-2.5 bg-[#FAF6EE]/50 text-slate-800 focus:outline-none"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-sm font-extrabold text-[#0F2C2F] border-b border-slate-100 pb-2">2. ปรับแต่งเนื้อหากิจกรรมและป้ายแบนเนอร์หน้าแรก (Real-Time Banner Editor)</h3>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="space-y-1.5">
+                          <label>พาดหัวกิจกรรมหลัก (Hero Banner Title)</label>
+                          <input 
+                            type="text" 
+                            value={systemConfig.bannerTitle}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, bannerTitle: e.target.value })}
+                            className="w-full border border-slate-200 rounded-xl p-2.5 bg-[#FAF6EE]/50 text-slate-800 focus:outline-none"
+                          />
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label>แท็กโปรโมชันบนหัวเรื่อง</label>
+                          <input 
+                            type="text" 
+                            value={systemConfig.bannerTag}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, bannerTag: e.target.value })}
+                            className="w-full border border-slate-200 rounded-xl p-2.5 bg-[#FAF6EE]/50 text-slate-800 focus:outline-none"
+                          />
+                        </div>
+
+                        <div className="space-y-1.5 sm:col-span-2">
+                          <label>คำอธิบายความตื่นตาของกิจกรรมย่อย (Banner Subtitle)</label>
+                          <input 
+                            type="text" 
+                            value={systemConfig.bannerSubtitle}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, bannerSubtitle: e.target.value })}
+                            className="w-full border border-slate-200 rounded-xl p-2.5 bg-[#FAF6EE]/50 text-slate-800 focus:outline-none"
+                          />
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label>เป้าหมายผูกนิยายเมื่อผู้อ่านคลิกแบนเนอร์</label>
+                          <select 
+                            value={systemConfig.bannerLinkNovel}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, bannerLinkNovel: e.target.value })}
+                            className="w-full border border-slate-200 rounded-xl p-2.5 bg-white text-[#0F2C2F] focus:outline-none font-semibold"
+                          >
+                            {novels.filter(n => !n.isBanned).map(n => (
+                              <option key={n.id} value={n.id}>{n.title} (โดย {n.author})</option>
+                            ))}
+                          </select>
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label>โทนสีของแบนเนอร์กิจกรรม (Cover Gradient)</label>
+                          <select 
+                            value={systemConfig.bannerGradient}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, bannerGradient: e.target.value })}
+                            className="w-full border border-slate-200 rounded-xl p-2.5 bg-white text-[#0F2C2F] focus:outline-none font-semibold"
+                          >
+                            <option value="from-[#0F2C2F] via-[#115E59] to-[#B45309]">Midnight Emerald & Gold (สไตล์ดั้งเดิมพรีเมียม)</option>
+                            <option value="from-[#4C1D95] via-[#762565] to-[#B45309]">Imperial Purple Dusk (สายรักแฟนตาซี)</option>
+                            <option value="from-[#0F172A] via-[#1E293B] to-[#334155]">Sleek Minimal Slate (สายสืบสวนเข้มข้น)</option>
+                            <option value="from-red-950 via-rose-900 to-amber-700">Ruby Royal (ความแค้นสีทับทิม)</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-sm font-extrabold text-[#0F2C2F] border-b border-slate-100 pb-2">3. นโยบายความปลอดภัยและโหมดเซิร์ฟเวอร์</h3>
+                      
+                      <div className="flex flex-col sm:flex-row gap-6">
+                        <label className="flex items-center gap-2.5 cursor-pointer">
+                          <input 
+                            type="checkbox"
+                            checked={systemConfig.allowSelfVerify}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, allowSelfVerify: e.target.checked })}
+                            className="w-4 h-4 rounded text-[#B45309] accent-[#B45309]"
+                          />
+                          <span>ข้ามการตรวจเอกสารเมื่อนักแต่งสมัครยืนยันตน (Auto-Verify)</span>
+                        </label>
+
+                        <label className="flex items-center gap-2.5 cursor-pointer text-red-600 font-extrabold">
+                          <input 
+                            type="checkbox"
+                            checked={systemConfig.isMaintenance}
+                            onChange={(e) => setSystemConfig({ ...systemConfig, isMaintenance: e.target.checked })}
+                            className="w-4 h-4 rounded accent-red-600"
+                          />
+                          <span>เปิดใช้งาน "โหมดปิดปรับปรุงเซิร์ฟเวอร์" ทั่วแพลตฟอร์ม</span>
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+                )}
+
+              </div>
+
+            </div>
+
+          </div>
+        )}
+
+      </main>
+
+      {/* ================= EDIT USER ACCOUNT DETAILS MODAL ================= */}
+      {showEditUserModal && editingUser && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
+          <div className="bg-white rounded-3xl w-full max-w-md p-6 shadow-2xl relative border border-slate-100 animate-fadeIn text-xs font-semibold">
+            <button 
+              onClick={() => { setShowEditUserModal(false); setEditingUser(null); }}
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="text-center space-y-2 mb-6">
+              <div className="w-10 h-10 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto">
+                <Database className="w-5 h-5" />
+              </div>
+              <h3 className="font-extrabold text-base text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>จัดการสิทธิ์และสถิติบัญชีผู้ใช้</h3>
+              <p className="text-[10px] text-slate-400">ควบคุมสิทธิ์และตรวจสอบความเคลื่อนไหวของบัญชี {editingUser.email}</p>
+            </div>
+
+            <form onSubmit={handleSaveUserByAdmin} className="space-y-4">
+              
+              <div className="space-y-1.5">
+                <label>ชื่อนามแฝง (Username)</label>
+                <input 
+                  type="text" 
+                  value={editingUser.username}
+                  onChange={(e) => setEditingUser({ ...editingUser, username: e.target.value })}
+                  className="w-full border p-2.5 rounded-xl bg-[#FAF6EE]/50 focus:outline-none focus:ring-2 focus:ring-[#B45309]"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1.5">
+                  <label>เหรียญทอง (Coins)</label>
+                  <input 
+                    type="number" 
+                    value={editingUser.coins}
+                    onChange={(e) => setEditingUser({ ...editingUser, coins: Number(e.target.value) || 0 })}
+                    className="w-full border p-2.5 rounded-xl bg-[#FAF6EE]/50 focus:outline-none focus:ring-2 focus:ring-[#B45309]"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label>รายได้ผู้เขียนสะสม (Coins)</label>
+                  <input 
+                    type="number" 
+                    value={editingUser.earningsCoins || 0}
+                    onChange={(e) => setEditingUser({ ...editingUser, earningsCoins: Number(e.target.value) || 0 })}
+                    className="w-full border p-2.5 rounded-xl bg-[#FAF6EE]/50 focus:outline-none focus:ring-2 focus:ring-[#B45309]"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <label>บทบาทการทำงานหลัก (System Role)</label>
+                <select 
+                  value={editingUser.role} 
+                  onChange={(e) => setEditingUser({ ...editingUser, role: e.target.value })}
+                  className="w-full border p-2.5 rounded-xl bg-white focus:outline-none"
+                >
+                  <option value="reader">Reader (ผู้อ่านทั่วไป)</option>
+                  <option value="author">Author (ผู้ประพันธ์เปิดสิทธิ์)</option>
+                  <option value="admin">Admin (ผู้ดูแลระบบสูงสุด)</option>
+                </select>
+              </div>
+
+              <div className="space-y-3 pt-2 border-t border-slate-100 flex flex-col gap-2">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input 
+                    type="checkbox"
+                    checked={editingUser.isVerifiedAuthor}
+                    onChange={(e) => setEditingUser({ ...editingUser, isVerifiedAuthor: e.target.checked })}
+                    className="w-4 h-4 rounded text-[#B45309] accent-[#B45309]"
+                  />
+                  <span>ผ่านการยืนยันตนเพื่อรับรายได้แล้ว (Verified Creator)</span>
+                </label>
+
+                <label className="flex items-center gap-2 cursor-pointer text-red-600 font-extrabold">
+                  <input 
+                    type="checkbox"
+                    checked={editingUser.isBanned}
+                    onChange={(e) => setEditingUser({ ...editingUser, isBanned: e.target.checked })}
+                    className="w-4 h-4 rounded accent-red-600"
+                  />
+                  <span>สั่งบล็อก / แบนระงับการเข้าใช้บัญชีนี้ทันที (BANNED STATUS)</span>
+                </label>
+              </div>
+
+              <button 
+                type="submit"
+                className="w-full py-2.5 bg-[#0F2C2F] text-white font-bold rounded-xl hover:bg-[#115E59] transition-all text-xs"
+              >
+                บันทึกการเปลี่ยนแปลงทั้งหมด
+              </button>
+
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ================= LOGIN MODAL ================= */}
+      {showLoginModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl w-full max-w-sm p-6 shadow-2xl relative border border-slate-100 animate-fadeIn text-xs">
+            <button 
+              onClick={() => setShowLoginModal(false)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="text-center space-y-2 mb-6">
+              <div className="w-10 h-10 bg-[#FAF6EE] text-[#B45309] rounded-2xl flex items-center justify-center mx-auto">
+                <Lock className="w-5 h-5" />
+              </div>
+              <h3 className="font-extrabold text-base text-[#0F2C2F]" style={{ fontFamily: 'Lora, serif' }}>เข้าสู่คลังอักษร Ink & Gold</h3>
+              <p className="text-[10px] text-slate-400">กรอกอีเมลเพื่อล็อกอินหรือสลับการเข้าใช้งาน</p>
+            </div>
+            
+            <form onSubmit={handleLogin} className="space-y-4">
+              <div className="space-y-1.5">
+                <label className="font-bold text-slate-600">อีเมลผู้ใช้ของคุณ</label>
+                <input 
+                  type="email" 
+                  value={loginInputEmail}
+                  onChange={(e) => setLoginInputEmail(e.target.value)}
+                  required
+                  placeholder="เช่น reader@mail.com หรือแอดมินระบบ"
+                  className="w-full border border-slate-200 rounded-xl p-2.5 focus:ring-2 focus:ring-[#B45309] focus:outline-none"
+                />
+              </div>
+
+              <div className="bg-amber-50 border border-amber-100 p-3 rounded-xl text-slate-600 leading-relaxed text-[11px] font-medium">
+                <p className="font-bold text-[#B45309]">💡 สลับล็อกอินโหมดแอดมิน:</p>
+                <p className="mt-0.5">กรอกอีเมล: <strong className="underline select-all">admin@inkandgold.com</strong> เพื่อเข้าดูระบบอนุมัติเอกสารและถอนเงินสะสมทันที!</p>
+              </div>
+
+              <button 
+                type="submit"
+                className="w-full py-2.5 bg-[#0F2C2F] text-white font-bold rounded-xl shadow-md transition-colors hover:bg-[#115E59]"
+              >
+                ยืนยันการเข้าใช้งาน
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ================= FOOTER ================= */}
+      <footer className="bg-[#0F2C2F] border-t border-[#B45309]/20 py-12 text-center text-xs text-slate-400">
+        <div className="max-w-7xl mx-auto px-4 space-y-4">
+          <p className="font-bold text-[#FAF6EE]" style={{ fontFamily: 'Lora, serif' }}>Ink & Gold © 2026</p>
+          <p className="max-w-md mx-auto leading-relaxed text-slate-300 font-light">
+            แหล่งสร้างสรรค์ผลงานนิยายขนาดยาวระดับโลก ค้นหานักแต่งอิสระที่หลากหลาย สนุกกับบทเนื้อหารอบด้านผ่านเทคโนโลยีที่มีประสิทธิภาพสูงสุด
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  );
+}
+
+```
