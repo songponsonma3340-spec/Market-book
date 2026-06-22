@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aureate - Vibrant Literary Narrative</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#a8caea",
+                    "on-secondary-fixed": "#380d00",
+                    "on-tertiary-fixed-variant": "#284a64",
+                    "inverse-surface": "#2f312e",
+                    "on-primary-fixed-variant": "#084f4d",
+                    "on-surface": "#1b1c1a",
+                    "outline-variant": "#bfc8c7",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#3f4948",
+                    "on-primary-fixed": "#00201f",
+                    "surface-variant": "#e3e2df",
+                    "primary-fixed-dim": "#95d1ce",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#faf9f5",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2f1ed",
+                    "on-tertiary-fixed": "#001e31",
+                    "surface": "#faf9f5",
+                    "on-background": "#1b1c1a",
+                    "outline": "#707978",
+                    "secondary": "#8c4e35",
+                    "secondary-fixed-dim": "#ffb59a",
+                    "surface-container-low": "#f4f4f0",
+                    "surface-tint": "#2a6865",
+                    "tertiary-fixed": "#cce5ff",
+                    "on-secondary-fixed-variant": "#6f3720",
+                    "on-primary-container": "#7ebab7",
+                    "background": "#faf9f5",
+                    "tertiary": "#062f48",
+                    "on-tertiary-container": "#91b2d2",
+                    "secondary-fixed": "#ffdbce",
+                    "tertiary-container": "#234560",
+                    "on-secondary-container": "#793f27",
+                    "inverse-primary": "#95d1ce",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#efeeea",
+                    "secondary-container": "#ffad8f",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#b1eeea",
+                    "surface-container-highest": "#e3e2df",
+                    "surface-dim": "#dbdad6",
+                    "primary-container": "#004b49",
+                    "primary": "#003331",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e9e8e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": [
+                            "Libre Caslon Text"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "title-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-lg": [
+                            "Libre Caslon Text"
+                    ],
+                    "label-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-md": [
+                            "Libre Caslon Text"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "title-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        /* Custom overrides to ensure precise line weights matching guidance */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- JSON Component: TopNavBar -->
+<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight">
+                Aureate
+            </div>
+<!-- Navigation Shell (Desktop) -->
+<nav class="hidden md:flex gap-gutter font-body-md text-body-md items-center">
+<!-- Active Item: Browse (Assuming homepage intent is discovery) -->
+<a class="text-primary font-bold border-b-2 border-primary pb-1 transition-all duration-300 ease-in-out" href="#">Browse</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 ease-in-out" href="#">Categories</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 ease-in-out" href="#">Write</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<button class="text-primary hover:text-secondary transition-colors duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="hidden md:flex items-center gap-4 pl-4 border-l border-outline-variant">
+<button class="text-primary hover:text-secondary transition-colors duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+<button class="text-primary hover:text-secondary transition-colors duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section: Featured Narrative -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 flex flex-col gap-6 order-2 md:order-1">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest flex items-center gap-2">
+<span class="w-8 h-px bg-secondary"></span> Editor's Selection
+                    </span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight">
+                        The Architecture of Silence
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+                        A breathtaking exploration of memory and structural decay. Set within the labyrinthine halls of a forgotten city, this month's featured novel weaves a tale where silence speaks louder than words.
+                    </p>
+<div class="flex flex-wrap gap-4 mt-6">
+<button class="bg-primary text-on-primary h-12 px-8 font-label-md text-label-md rounded flex items-center justify-center hover:bg-primary-container transition-colors">
+                            Read Excerpt
+                        </button>
+<button class="border border-secondary text-secondary h-12 px-8 font-label-md text-label-md rounded flex items-center justify-center hover:bg-surface-variant transition-colors">
+                            Add to Library
+                        </button>
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2 mb-8 md:mb-0">
+<div class="relative w-full h-[400px] md:h-[600px] bg-surface-dim border border-outline-variant p-4">
+<img class="w-full h-full object-cover shadow-sm" data-alt="A highly detailed, sophisticated editorial composition of a beautifully bound book resting on a dark marble surface. The lighting is dramatic and moody, utilizing deep emerald and teal shadows contrasting with warm, amber highlights striking the gold-foil text on the spine. The aesthetic evokes a vibrant, intellectual literary magazine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVwnTq0i0RhlD-MKu362Ci3pJMkv1yldsAf83Rnsxg6tvnk2VPEGT0ORkMJukhPXQy8waLyNd55fECEXbItz6oe0wiH2DTwn16pdcUVOeeT-hZDEhFFK0Cn4stnbUjpUApWobnx3AcEztA_9xZmxyFTjvzZFM-L08BaEPanO6oBSm17KtBILk9moUqlhpef0QdqLPjcD8cJd8OAZ6FK3mxwO4aRG7u8dZjHLMuZNYAhm-VyauGdbavGt72vv5IUh6h-_An5o9KeFPT"/>
+<!-- Subtle decorative element -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary-fixed-dim/20 rounded-full blur-2xl pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Curated Bento Grid -->
+<section class="border-t border-surface-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-32">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-md text-headline-md text-primary">Curated Narratives</h2>
+<a class="hidden md:flex font-label-md text-label-md text-secondary hover:text-primary transition-colors items-center gap-1 uppercase tracking-widest" href="#">
+                        View All <span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-unit auto-rows-[250px] md:auto-rows-[300px]">
+<!-- Large Feature Card -->
+<article class="md:col-span-2 md:row-span-2 border border-outline-variant bg-surface-bright relative group overflow-hidden cursor-pointer flex flex-col justify-end">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A cinematic scene capturing a figure in a flowing teal garment standing on a misty cliff edge at dawn. The sky is a gradient of soft cream and warm amber, creating a feeling of epic fantasy and vibrant sophistication. The image is framed within a modern, minimalist border." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlZ-_2qBSVK8jWlyyfwuQy-n9S63aXDbtSvfcOn9BVdonUwnoCVQCXOTUkdCcJlwSWDJWOEVswWANnE2SrYXStMb4NP5e-LhKk_Yo_5HgWQksseR08KEm-Xq0lPIQurOxelIwFnI8A_dYEVDfXfHUvIxrRicYPfb_1qpJb_59mZfOW01UXK7cVD1dyRZJihu5pURtNrjg5T5X0GBul3gbzlyDf1YLzVnyGVagKfb3F-Z_n_6liBg9C-QCpMjDYbfGqzajjqX6_KK0d"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
+<div class="relative z-10 p-8 flex flex-col gap-3">
+<span class="bg-surface/10 border border-surface/20 text-on-primary font-label-md text-label-md px-4 py-1.5 rounded-full w-fit backdrop-blur-md">Fantasy Epic</span>
+<h3 class="font-display-lg-mobile text-display-lg-mobile text-on-primary leading-tight">Crown of Glass &amp; Shadow</h3>
+<p class="font-body-md text-body-md text-on-primary/80 line-clamp-2 max-w-md">An intricate political drama wrapped in ancient mythology. A story that redefines the modern fantasy genre with its stark realism.</p>
+</div>
+</article>
+<!-- Small Card 1 -->
+<article class="border border-outline-variant bg-surface p-6 flex flex-col hover:bg-surface-bright transition-colors cursor-pointer group">
+<span class="font-label-md text-label-md text-secondary mb-4 uppercase tracking-widest">Historical Fiction</span>
+<h3 class="font-title-lg text-title-lg text-primary flex-grow group-hover:text-secondary transition-colors">The Alchemist's Daughter</h3>
+<div class="mt-auto flex justify-between items-center text-on-surface-variant border-t border-outline-variant/50 pt-4">
+<span class="font-body-md text-body-md">By E. Thorne</span>
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</div>
+</article>
+<!-- Small Card 2 with subtle image background -->
+<article class="border border-outline-variant bg-surface-dim relative overflow-hidden flex flex-col p-6 hover:bg-surface transition-colors cursor-pointer group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-multiply group-hover:opacity-30 transition-opacity" data-alt="An abstract macro shot of deep emerald ink blooming in water against a pale cream background. The organic shapes suggest creativity and fluid thought, fitting perfectly into a sophisticated literary design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbtaj31TFa8mX8LxE_uObfv1p7JRXUucnG9jOweXRmS-Cy6xSCKKdDTbixCYRTK-FLHNHZ_xiy7XlHbnhHkXZiWUoze67KL2hk1R3xgK9lIS1tDbOBmf7uANtJwZLjxFezlKZHP9HziZ8vIDs5VVMgXKYY5dplPkkuZc92xByaLcntCT0tAxtaoIwarx-TiTSf-JZ7uEpSIAFZ50CtoAoIaLk93fbA1mVIcs-HSG4ejFyYk4CgKfpYFcfUZe3JDBGvpXSN0xdDhUDz"/>
+<div class="relative z-10 flex flex-col h-full">
+<span class="font-label-md text-label-md text-primary mb-4 uppercase tracking-widest">Poetry Collection</span>
+<h3 class="font-title-lg text-title-lg text-primary flex-grow">Whispers in the Amber</h3>
+<div class="mt-auto flex justify-between items-center text-on-surface-variant border-t border-primary/20 pt-4">
+<span class="font-body-md text-body-md">By L. Vance</span>
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</div>
+</div>
+</article>
+<!-- Wide Horizontal Card -->
+<article class="md:col-span-2 border border-outline-variant bg-surface flex flex-col md:flex-row hover:bg-surface-bright transition-colors cursor-pointer group">
+<div class="w-full md:w-1/3 h-48 md:h-full bg-surface-dim border-b md:border-b-0 md:border-r border-outline-variant shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-500" data-alt="A minimalist architectural photograph showing a sharply angled modern building casting deep shadows. A single warm amber light glows from one window. The image uses stark geometry and a muted palette of slate blues, creams, and deep teals to convey a mood of contemporary isolation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCsBc9OmXaC7cIhkI6Qri0i7tvjCud5lRAC5W26xWstkpOO65ktARzJ45TvsHj0WoCQCUPVkgNlin6pYGNIh01rVjwvLD2nyRhvrIYKu5t0uNtbm7hv-cshSY2UhZOOrnCysQxzSFofflL7gnmhgrwivuGCTZKsY2AWkZlOQgAip6pzmdwVYZKZpa-sb3wWEBI5EaxXzRBS-UHlO5q9LcSDmXZ44St3wFBX-bFWZZ0Z0GXZZjwcDTb6E2KQkzreeDo1E4ZZKGhPSVE"/>
+</div>
+<div class="p-6 md:p-8 flex flex-col justify-center w-full">
+<span class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-widest">Contemporary</span>
+<h3 class="font-title-lg text-title-lg text-primary mb-3 group-hover:text-secondary transition-colors">Neon Gods in Daylight</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">An unapologetic look at fame, identity, and truth in the modern digital age.</p>
+<span class="font-body-md text-body-md text-primary mt-auto">Read Review →</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Trending Discussions (Editorial List Layout) -->
+<section class="bg-surface-bright border-t border-surface-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-32 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 md:pr-12 mb-12 md:mb-0 flex flex-col">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Trending Discourse</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        Join the conversation. Dive deep into the thematic undercurrents of this month's most discussed works with fellow readers and authors.
+                    </p>
+<button class="w-fit border border-outline text-primary h-12 px-6 font-label-md text-label-md rounded flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors mt-auto">
+                        Explore Forums <span class="material-symbols-outlined text-[18px]">forum</span>
+</button>
+</div>
+<div class="md:col-span-8 flex flex-col">
+<!-- Editorial List Items -->
+<a class="py-6 border-t border-outline-variant flex justify-between items-center gap-6 hover:bg-surface transition-colors px-4 -mx-4 group" href="#">
+<div class="flex flex-col gap-2">
+<h4 class="font-title-lg text-title-lg text-primary group-hover:text-secondary transition-colors">The Morality of the 'Anti-Hero' in Modern Fantasy</h4>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-1 text-secondary"><span class="material-symbols-outlined text-[16px]">local_fire_department</span> Hot</span>
+<span>142 replies</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span>Started by @LoreKeeper</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors shrink-0">arrow_forward</span>
+</a>
+<a class="py-6 border-t border-outline-variant flex justify-between items-center gap-6 hover:bg-surface transition-colors px-4 -mx-4 group" href="#">
+<div class="flex flex-col gap-2">
+<h4 class="font-title-lg text-title-lg text-primary group-hover:text-secondary transition-colors">Symbolism of Water in 'The Architecture of Silence'</h4>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-on-surface-variant font-label-md text-label-md">
+<span>89 replies</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span>Started by @CritiqueCentral</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors shrink-0">arrow_forward</span>
+</a>
+<a class="py-6 border-t border-b border-outline-variant flex justify-between items-center gap-6 hover:bg-surface transition-colors px-4 -mx-4 group" href="#">
+<div class="flex flex-col gap-2">
+<h4 class="font-title-lg text-title-lg text-primary group-hover:text-secondary transition-colors">World-Building Workshop: Crafting Believable Magic Systems</h4>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-on-surface-variant font-label-md text-label-md">
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-xs">Workshop</span>
+<span>305 replies</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<span>Started by @AureateStaff</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors shrink-0">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- JSON Component: Footer -->
+<footer class="bg-primary w-full py-16 text-on-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4 mb-8 md:mb-0">
+<div class="font-display-lg text-display-lg text-on-primary">
+                    Aureate
+                </div>
+<p class="font-body-md text-body-md text-primary-fixed-dim opacity-80 mt-4">
+                    Cultivating vibrant literary narratives for the modern intellectual.
+                </p>
+</div>
+<!-- Links Columns -->
+<div class="col-span-1 md:col-span-3 flex flex-col md:flex-row justify-end gap-12 md:gap-24">
+<div class="flex flex-col gap-4">
+<span class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest mb-2">Platform</span>
+<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">About Us</a>
+<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">Contact</a>
+<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">Press Kit</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest mb-2">Legal</span>
+<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-primary-fixed-dim opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+<!-- Copyright (Bottom Row) -->
+<div class="col-span-1 md:col-span-4 mt-16 pt-8 border-t border-primary-fixed-dim/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-primary-fixed-dim opacity-60">
+                    © 2024 Aureate Literary. All rights reserved.
+                </p>
+<div class="flex gap-4">
+<!-- Placeholder social icons -->
+<span class="material-symbols-outlined text-primary-fixed-dim opacity-80 hover:opacity-100 cursor-pointer transition-opacity">language</span>
+<span class="material-symbols-outlined text-primary-fixed-dim opacity-80 hover:opacity-100 cursor-pointer transition-opacity">share</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
